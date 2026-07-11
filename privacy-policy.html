@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Salamatutka-sovelluksen tietosuojakäytäntö.">
+  <title>Salamatutkan tietosuojakäytäntö – AspByte</title>
+  <style>
+    :root { color-scheme:dark; --bg:#0b1220; --card:#111c2f; --text:#eaf2ff; --muted:#a8b8d4; --accent:#ffd34d; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,sans-serif; }
+    main { max-width:860px; margin:0 auto; padding:42px 22px 72px; }
+    article { background:var(--card); padding:clamp(22px,5vw,46px); border-radius:20px; box-shadow:0 18px 50px rgba(0,0,0,.25); }
+    h1 { line-height:1.2; margin-top:0; }
+    h2 { margin-top:32px; line-height:1.3; }
+    a { color:var(--accent); }
+    .muted { color:var(--muted); }
+    .notice { border-left:4px solid var(--accent); padding:10px 16px; background:rgba(255,211,77,.08); }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Salamatutkan tietosuojakäytäntö</h1>
+      <p class="muted">Voimassa 11.7.2026 alkaen · Viimeksi päivitetty 11.7.2026</p>
+
+      <p>Tämä tietosuojakäytäntö kuvaa, miten AspByte (”me”) käsittelee tietoja Salamatutka-Android-sovelluksessa. Yhteydenotot: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
+
+      <h2>1. Sovelluksen tarkoitus</h2>
+      <p>Salamatutka näyttää valitun alueen salamahavaintoja ja voi lähettää ilmoituksen, kun alueella havaitaan uusi salama. Sovellus ei ole virallinen vaaravaroitus- tai turvallisuuspalvelu.</p>
+
+      <h2>2. Sijaintitiedot ja paikkahaku</h2>
+      <p>Sijainnin käyttö on vapaaehtoista. Sovellus pyytää sijaintilupaa vasta, kun käyttäjä valitsee ”Oma sijainti” -toiminnon. Sijaintia käytetään hälytysalueen keskipisteen valitsemiseen. Sovellus ei pyydä jatkuvaa taustasijaintia eikä käytä sijaintia mainosten kohdentamiseen.</p>
+      <p>Valittu paikka, koordinaatit ja hälytyssäde tallennetaan paikallisesti käyttäjän laitteelle. Paikan nimellä tai osoitteella tehtävä haku käyttää Android-laitteen tarjoamaa paikkahakupalvelua, jonka palveluntarjoaja voi käsitellä hakutekstin oman tietosuojakäytäntönsä mukaisesti.</p>
+
+      <h2>3. Salamahavainnot ja kartta</h2>
+      <p>Sovellus hakee salamahavainnot Ilmatieteen laitoksen avoimen datan WFS-palvelusta. Kysely sisältää valitun alueen koordinaateista muodostetun karttarajauksen ja ajanjakson. Verkkopyyntö välittää palvelulle myös tavanomaisia teknisiä verkkotietoja, kuten IP-osoitteen.</p>
+      <p>Kartta käyttää OpenStreetMap-karttatiiliä. Karttapalvelu voi saada IP-osoitteen, laitteen verkkopyynnön teknisiä tietoja ja tiedon näytetystä kartta-alueesta.</p>
+      <ul>
+        <li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Ilmatieteen laitoksen avoin data</a></li>
+        <li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundationin tietosuojakäytäntö</a></li>
+      </ul>
+
+      <h2>4. Mainokset ja Googlen palvelut</h2>
+      <p>Salamatutkan ilmainen versio käyttää Google AdMobia mainosten näyttämiseen. Google ja sen mainoskumppanit voivat käsitellä esimerkiksi IP-osoitetta, mainostunnistetta, laitteen tietoja, sovelluksen käyttötietoja sekä mainosten näyttö- ja vuorovaikutustietoja mainosten toimittamiseen, mittaamiseen, petosten torjuntaan ja soveltuvissa tilanteissa personointiin.</p>
+      <p>Euroopan talousalueella, Isossa-Britanniassa ja Sveitsissä sovellus käyttää Googlen User Messaging Platform -ratkaisua tarvittavien mainossuostumusten pyytämiseen. Käyttäjä voi muuttaa tai peruuttaa valintansa sovelluksen ”Mainosten tietosuoja-asetukset” -painikkeesta silloin, kun Google edellyttää asetusten näyttämistä.</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy" rel="noopener">Googlen tietosuojakäytäntö</a></li>
+        <li><a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Miten Google käyttää kumppaneiden sovelluksista saatuja tietoja</a></li>
+      </ul>
+
+      <h2>5. Laitteelle tallennettavat tiedot</h2>
+      <p>Sovellus tallentaa paikallisesti valitun paikan ja säteen, salamavahdin tilan, viimeisimmän tarkistusajan sekä tiedon viimeksi ilmoitetusta salamahavainnosta. AspByte ei ylläpidä käyttäjätiliä tai omaa taustapalvelinta eikä vastaanota näitä paikallisia asetuksia.</p>
+      <p>Paikalliset tiedot säilyvät, kunnes käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</p>
+
+      <h2>6. Ilmoitukset ja taustatoiminta</h2>
+      <p>Jos käyttäjä sallii ilmoitukset ja käynnistää salamavahdin, sovellus tekee Androidin sallimia verkkotarkistuksia myös taustalla. Taustatarkistus käyttää käyttäjän aiemmin tallentamaa aluetta; se ei hae laitteen ajantasaista GPS-sijaintia taustalla.</p>
+
+      <h2>7. Tietojen suojaaminen ja jakaminen</h2>
+      <p>Verkkoyhteydet FMI:n, OpenStreetMapin ja Googlen palveluihin käyttävät HTTPS-salausta. Tietoja ei myydä AspByten toimesta. Tietoja välittyy edellä kuvatuille palveluntarjoajille vain sovelluksen toimintojen, kartan ja mainosten toteuttamiseksi.</p>
+
+      <h2>8. Lasten tietosuoja</h2>
+      <p>Salamatutkaa ei ole suunnattu erityisesti alle 13-vuotiaille. Jos huoltaja epäilee lapsen lähettäneen henkilötietoja AspBytelle, hän voi ottaa yhteyttä alla olevaan osoitteeseen.</p>
+
+      <h2>9. Käyttäjän valinnat ja oikeudet</h2>
+      <p>Käyttäjä voi olla antamatta sijainti- tai ilmoituslupaa ja käyttää paikan valintaan hakua tai karttaa. Androidin luvat voi peruuttaa laitteen asetuksissa. Paikalliset sovellustiedot voi poistaa Androidin sovellusasetuksista tai poistamalla sovelluksen.</p>
+      <p>Tietosuojaa koskevissa kysymyksissä ja soveltuvien tietosuojaoikeuksien käyttämiseksi voi ottaa yhteyttä osoitteeseen <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Kolmansien osapuolten käsittelemien tietojen osalta pyynnöt voidaan joutua osoittamaan kyseiselle palveluntarjoajalle.</p>
+
+      <h2>10. Muutokset</h2>
+      <p>Tätä käytäntöä voidaan päivittää sovelluksen tai palveluntarjoajien muuttuessa. Ajantasainen versio julkaistaan tällä sivulla ja sen päivityspäivä ilmoitetaan sivun alussa.</p>
+
+      <p class="notice">Salamatutka ei takaa havaintojen täydellisyyttä tai viiveettömyyttä. Noudata viranomaisten sää- ja vaaratiedotteita.</p>
+      <p><a href="index.html">← AspByten etusivulle</a></p>
+    </article>
+  </main>
+</body>
+</html>
