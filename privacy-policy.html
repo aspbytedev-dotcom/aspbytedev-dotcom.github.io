@@ -3,75 +3,209 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Salamatutka-sovelluksen tietosuojakäytäntö.">
+  <meta name="description" content="Salamatutka-sovelluksen tietosuojakäytäntö suomeksi, ruotsiksi ja englanniksi.">
   <title>Salamatutkan tietosuojakäytäntö – AspByte</title>
   <style>
-    :root { color-scheme:dark; --bg:#0b1220; --card:#111c2f; --text:#eaf2ff; --muted:#a8b8d4; --accent:#ffd34d; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,sans-serif; }
-    main { max-width:860px; margin:0 auto; padding:42px 22px 72px; }
-    article { background:var(--card); padding:clamp(22px,5vw,46px); border-radius:20px; box-shadow:0 18px 50px rgba(0,0,0,.25); }
-    h1 { line-height:1.2; margin-top:0; }
-    h2 { margin-top:32px; line-height:1.3; }
-    a { color:var(--accent); }
-    .muted { color:var(--muted); }
-    .notice { border-left:4px solid var(--accent); padding:10px 16px; background:rgba(255,211,77,.08); }
+    :root{color-scheme:dark;--bg:#0b1220;--card:#111c2f;--text:#eaf2ff;--muted:#a8b8d4;--accent:#ffd34d;--button:#23344e}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,sans-serif}
+    main{max-width:900px;margin:0 auto;padding:42px 22px 72px}article{background:var(--card);padding:clamp(22px,5vw,46px);border-radius:20px;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+    h1{line-height:1.2;margin-top:0}h2{margin-top:32px;line-height:1.3}a{color:var(--accent)}.muted{color:var(--muted)}
+    .notice{border-left:4px solid var(--accent);padding:10px 16px;background:rgba(255,211,77,.08)}
+    .languages{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0 0 20px;border-bottom:1px solid rgba(168,184,212,.22)}
+    .languages button{border:1px solid rgba(168,184,212,.35);border-radius:999px;padding:9px 16px;background:var(--button);color:var(--text);font:inherit;cursor:pointer}
+    .languages button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#0e1420;font-weight:700}
+    [hidden]{display:none!important}
   </style>
 </head>
 <body>
-  <main>
-    <article>
-      <h1>Salamatutkan tietosuojakäytäntö</h1>
-      <p class="muted">Voimassa 11.7.2026 alkaen · Viimeksi päivitetty 11.7.2026</p>
+<main><article>
+  <nav class="languages" aria-label="Kieli / Språk / Language">
+    <button type="button" data-lang="fi" aria-pressed="true">Suomi</button>
+    <button type="button" data-lang="sv" aria-pressed="false">Svenska</button>
+    <button type="button" data-lang="en" aria-pressed="false">English</button>
+  </nav>
 
-      <p>Tämä tietosuojakäytäntö kuvaa, miten AspByte (”me”) käsittelee tietoja Salamatutka-Android-sovelluksessa. Yhteydenotot: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
+  <section data-policy="fi">
+    <h1>Salamatutkan tietosuojakäytäntö</h1>
+    <p class="muted">Pääkieli: suomi · Voimassa 11.7.2026 alkaen · Päivitetty 13.7.2026</p>
+    <p>Tämä tietosuojakäytäntö kuvaa, miten AspByte käsittelee tietoja Salamatutka-Android-sovelluksessa. Yhteydenotot: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
 
-      <h2>1. Sovelluksen tarkoitus</h2>
-      <p>Salamatutka näyttää valitun alueen salamahavaintoja ja voi lähettää ilmoituksen, kun alueella havaitaan uusi salama. Sovellus ei ole virallinen vaaravaroitus- tai turvallisuuspalvelu.</p>
+    <h2>1. Tarkoitus</h2>
+    <p>Salamatutka näyttää salamahavaintoja kartalla ja voi ilmoittaa uudesta salamasta käyttäjän valitsemalla alueella. Sovellus ei ole virallinen vaaravaroitus- tai turvallisuuspalvelu.</p>
 
-      <h2>2. Sijaintitiedot ja paikkahaku</h2>
-      <p>Sijainnin käyttö on vapaaehtoista. Sovellus pyytää sijaintilupaa vasta, kun käyttäjä valitsee ”Oma sijainti” -toiminnon. Sijaintia käytetään hälytysalueen keskipisteen valitsemiseen. Sovellus ei pyydä jatkuvaa taustasijaintia eikä käytä sijaintia mainosten kohdentamiseen.</p>
-      <p>Valittu paikka, koordinaatit ja hälytyssäde tallennetaan paikallisesti käyttäjän laitteelle. Paikan nimellä tai osoitteella tehtävä haku käyttää Android-laitteen tarjoamaa paikkahakupalvelua, jonka palveluntarjoaja voi käsitellä hakutekstin oman tietosuojakäytäntönsä mukaisesti.</p>
+    <h2>2. Sijainti ja paikkahaku</h2>
+    <p>Sijainnin käyttö on vapaaehtoista. Sovellus pyytää sijaintilupaa vasta, kun käyttäjä painaa GPS-painiketta. Sijaintia käytetään hälytysalueen keskipisteen valitsemiseen. Sovellus ei pyydä jatkuvaa taustasijaintia eikä käytä sijaintia mainosten kohdentamiseen.</p>
+    <p>Valittu paikka, koordinaatit ja säde tallennetaan paikallisesti laitteelle. Paikan nimellä tai osoitteella tehtävä haku käyttää Android-laitteen paikkahakupalvelua, jonka tarjoaja voi käsitellä hakutekstin oman käytäntönsä mukaisesti.</p>
 
-      <h2>3. Salamahavainnot ja kartta</h2>
-      <p>Sovellus hakee salamahavainnot Ilmatieteen laitoksen avoimen datan WFS-palvelusta. Kysely sisältää valitun alueen koordinaateista muodostetun karttarajauksen ja ajanjakson. Verkkopyyntö välittää palvelulle myös tavanomaisia teknisiä verkkotietoja, kuten IP-osoitteen.</p>
-      <p>Kartta käyttää OpenStreetMap-karttatiiliä. Karttapalvelu voi saada IP-osoitteen, laitteen verkkopyynnön teknisiä tietoja ja tiedon näytetystä kartta-alueesta.</p>
-      <ul>
-        <li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Ilmatieteen laitoksen avoin data</a></li>
-        <li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundationin tietosuojakäytäntö</a></li>
-      </ul>
+    <h2>3. Salamadata ja kartta</h2>
+    <p>Sovellus hakee salamahavainnot Ilmatieteen laitoksen avoimen datan WFS-palvelusta. Kysely sisältää valitun alueen karttarajauksen ja ajanjakson. Palvelu saa myös tavallisia teknisiä verkkotietoja, kuten IP-osoitteen.</p>
+    <p>Kartta käyttää OpenStreetMap-karttatiiliä. Karttapalvelu voi saada IP-osoitteen, teknisiä verkkotietoja ja tiedon näytetystä kartta-alueesta.</p>
+    <ul>
+      <li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Ilmatieteen laitoksen avoin data</a></li>
+      <li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundationin tietosuojakäytäntö</a></li>
+    </ul>
 
-      <h2>4. Mainokset ja Googlen palvelut</h2>
-      <p>Salamatutkan ilmainen versio käyttää Google AdMobia mainosten näyttämiseen. Google ja sen mainoskumppanit voivat käsitellä esimerkiksi IP-osoitetta, mainostunnistetta, laitteen tietoja, sovelluksen käyttötietoja sekä mainosten näyttö- ja vuorovaikutustietoja mainosten toimittamiseen, mittaamiseen, petosten torjuntaan ja soveltuvissa tilanteissa personointiin.</p>
-      <p>Euroopan talousalueella, Isossa-Britanniassa ja Sveitsissä sovellus käyttää Googlen User Messaging Platform -ratkaisua tarvittavien mainossuostumusten pyytämiseen. Käyttäjä voi muuttaa tai peruuttaa valintansa sovelluksen ”Mainosten tietosuoja-asetukset” -painikkeesta silloin, kun Google edellyttää asetusten näyttämistä.</p>
-      <ul>
-        <li><a href="https://policies.google.com/privacy" rel="noopener">Googlen tietosuojakäytäntö</a></li>
-        <li><a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Miten Google käyttää kumppaneiden sovelluksista saatuja tietoja</a></li>
-      </ul>
+    <h2>4. Mainokset</h2>
+    <p>Ilmainen versio käyttää Google AdMobia. Google ja sen kumppanit voivat käsitellä esimerkiksi IP-osoitetta, mainostunnistetta, laitteen ja sovelluksen käyttötietoja sekä mainosten näyttö- ja vuorovaikutustietoja mainosten toimittamiseen, mittaamiseen, petosten torjuntaan ja soveltuvissa tilanteissa personointiin.</p>
+    <p>Euroopan talousalueella, Isossa-Britanniassa ja Sveitsissä sovellus käyttää Googlen User Messaging Platform -ratkaisua mainossuostumusten pyytämiseen. Käyttäjä voi muuttaa valintaansa sovelluksen Mainosten tietosuoja-asetukset -toiminnosta, kun Google edellyttää sen näyttämistä.</p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" rel="noopener">Googlen tietosuojakäytäntö</a></li>
+      <li><a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Googlen kumppanisovellusten tietojen käyttö</a></li>
+    </ul>
 
-      <h2>5. Laitteelle tallennettavat tiedot</h2>
-      <p>Sovellus tallentaa paikallisesti valitun paikan ja säteen, salamavahdin tilan, viimeisimmän tarkistusajan sekä tiedon viimeksi ilmoitetusta salamahavainnosta. AspByte ei ylläpidä käyttäjätiliä tai omaa taustapalvelinta eikä vastaanota näitä paikallisia asetuksia.</p>
-      <p>Paikalliset tiedot säilyvät, kunnes käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</p>
+    <h2>5. Pro-tilaukset ja maksut</h2>
+    <p>Salamatutka Pro ostetaan Google Playn laskutusjärjestelmän kautta. Google käsittelee maksun, uusimisen, peruutuksen ja maksutapaan liittyvät tiedot. AspByte ei saa eikä tallenna käyttäjän maksukortin tai muun maksutavan tietoja.</p>
+    <p>Sovellus tarkistaa Google Playlta aktiivisen Pro-tilauksen. Pro-oikeuden tila ja viimeisen onnistuneen tarkistuksen aika tallennetaan paikallisesti enintään kolmen päivän välimuistijaksoa varten. Tilauksen voi hallita tai peruuttaa Google Playn tilausten hallinnassa.</p>
+    <ul><li><a href="https://play.google.com/store/account/subscriptions" rel="noopener">Google Playn tilausten hallinta</a></li></ul>
 
-      <h2>6. Ilmoitukset ja taustatoiminta</h2>
-      <p>Jos käyttäjä sallii ilmoitukset ja käynnistää salamavahdin, sovellus tekee Androidin sallimia verkkotarkistuksia myös taustalla. Taustatarkistus käyttää käyttäjän aiemmin tallentamaa aluetta; se ei hae laitteen ajantasaista GPS-sijaintia taustalla.</p>
+    <h2>6. Paikallisesti tallennettavat tiedot</h2>
+    <p>Sovellus tallentaa paikallisesti valitun paikan ja säteen, salamavahdin tilan, ilmoitusten hiljennyksen, viimeisimmän tarkistusajan, viimeksi ilmoitetun salamahavainnon, kielivalinnan ja Pro-oikeuden tarkistustilan. AspByte ei ylläpidä käyttäjätiliä tai omaa taustapalvelinta eikä vastaanota näitä asetuksia.</p>
+    <p>Paikalliset tiedot säilyvät, kunnes käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen. Google Play säilyttää ostohistorian oman käytäntönsä ja lakisääteisten velvoitteidensa mukaisesti.</p>
 
-      <h2>7. Tietojen suojaaminen ja jakaminen</h2>
-      <p>Verkkoyhteydet FMI:n, OpenStreetMapin ja Googlen palveluihin käyttävät HTTPS-salausta. Tietoja ei myydä AspByten toimesta. Tietoja välittyy edellä kuvatuille palveluntarjoajille vain sovelluksen toimintojen, kartan ja mainosten toteuttamiseksi.</p>
+    <h2>7. Ilmoitukset ja taustatoiminta</h2>
+    <p>Jos käyttäjä sallii ilmoitukset ja käynnistää salamavahdin, sovellus tekee Androidin sallimia verkkotarkistuksia myös taustalla. Tarkistus käyttää aiemmin tallennettua aluetta eikä hae laitteen ajantasaista GPS-sijaintia taustalla.</p>
 
-      <h2>8. Lasten tietosuoja</h2>
-      <p>Salamatutkaa ei ole suunnattu erityisesti alle 13-vuotiaille. Jos huoltaja epäilee lapsen lähettäneen henkilötietoja AspBytelle, hän voi ottaa yhteyttä alla olevaan osoitteeseen.</p>
+    <h2>8. Suojaaminen ja jakaminen</h2>
+    <p>Verkkoyhteydet Ilmatieteen laitoksen, OpenStreetMapin ja Googlen palveluihin käyttävät HTTPS-salausta. AspByte ei myy käyttäjätietoja. Tietoja välittyy edellä kuvatuille palveluntarjoajille vain sovelluksen, kartan, mainosten ja tilausten toteuttamiseksi.</p>
 
-      <h2>9. Käyttäjän valinnat ja oikeudet</h2>
-      <p>Käyttäjä voi olla antamatta sijainti- tai ilmoituslupaa ja käyttää paikan valintaan hakua tai karttaa. Androidin luvat voi peruuttaa laitteen asetuksissa. Paikalliset sovellustiedot voi poistaa Androidin sovellusasetuksista tai poistamalla sovelluksen.</p>
-      <p>Tietosuojaa koskevissa kysymyksissä ja soveltuvien tietosuojaoikeuksien käyttämiseksi voi ottaa yhteyttä osoitteeseen <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Kolmansien osapuolten käsittelemien tietojen osalta pyynnöt voidaan joutua osoittamaan kyseiselle palveluntarjoajalle.</p>
+    <h2>9. Lasten tietosuoja</h2>
+    <p>Salamatutkaa ei ole suunnattu erityisesti alle 13-vuotiaille. Huoltaja voi ottaa yhteyttä AspByteen, jos hän epäilee lapsen lähettäneen henkilötietoja.</p>
 
-      <h2>10. Muutokset</h2>
-      <p>Tätä käytäntöä voidaan päivittää sovelluksen tai palveluntarjoajien muuttuessa. Ajantasainen versio julkaistaan tällä sivulla ja sen päivityspäivä ilmoitetaan sivun alussa.</p>
+    <h2>10. Valinnat, oikeudet ja tietojen poistaminen</h2>
+    <p>Käyttäjä voi olla antamatta sijainti- tai ilmoituslupaa ja valita paikan nimihakua käyttäen. Luvat voi peruuttaa Androidin asetuksissa. Paikalliset tiedot voi poistaa tyhjentämällä sovelluksen tiedot tai poistamalla sovelluksen.</p>
+    <p>Tietosuojakysymyksissä ja soveltuvien oikeuksien käyttämiseksi voi ottaa yhteyttä: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Kolmansien osapuolten käsittelemiä tietoja koskeva pyyntö voidaan joutua osoittamaan kyseiselle palveluntarjoajalle.</p>
 
-      <p class="notice">Salamatutka ei takaa havaintojen täydellisyyttä tai viiveettömyyttä. Noudata viranomaisten sää- ja vaaratiedotteita.</p>
-      <p><a href="index.html">← AspByten etusivulle</a></p>
-    </article>
-  </main>
+    <h2>11. Muutokset</h2>
+    <p>Käytäntöä voidaan päivittää sovelluksen tai palveluntarjoajien muuttuessa. Ajantasainen versio ja päivityspäivä julkaistaan tällä sivulla.</p>
+    <p class="notice">Salamatutka ei takaa havaintojen täydellisyyttä tai viiveettömyyttä. Noudata viranomaisten sää- ja vaaratiedotteita.</p>
+    <p><a href="index.html">← AspByten etusivulle</a></p>
+  </section>
+
+  <section data-policy="sv" hidden>
+    <h1>Integritetspolicy för Salamatutka</h1>
+    <p class="muted">Huvudspråk: finska · Gäller från 11.7.2026 · Uppdaterad 13.7.2026</p>
+    <p>Denna integritetspolicy beskriver hur AspByte behandlar uppgifter i Android-appen Salamatutka. Kontakt: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
+
+    <h2>1. Syfte</h2>
+    <p>Salamatutka visar blixtobservationer på en karta och kan avisera om en ny blixt inom ett område som användaren valt. Appen är inte en officiell varnings- eller säkerhetstjänst.</p>
+
+    <h2>2. Plats och platssökning</h2>
+    <p>Det är frivilligt att använda enhetens plats. Appen begär platsbehörighet först när användaren trycker på GPS-knappen. Platsen används för att välja varningsområdets mittpunkt. Appen begär inte kontinuerlig bakgrundsplats och använder inte platsen för annonsinriktning.</p>
+    <p>Vald plats, koordinater och radie lagras lokalt på enheten. Sökning med platsnamn eller adress använder Android-enhetens platssökningstjänst, vars leverantör kan behandla söktexten enligt sin egen policy.</p>
+
+    <h2>3. Blixtdata och karta</h2>
+    <p>Appen hämtar observationer från Meteorologiska institutets WFS-tjänst för öppna data. Förfrågan innehåller det valda kartområdet och en tidsperiod. Tjänsten får även vanliga tekniska nätverksuppgifter, såsom IP-adressen.</p>
+    <p>Kartan använder kartplattor från OpenStreetMap. Karttjänsten kan få IP-adressen, tekniska nätverksuppgifter och information om det kartområde som visas.</p>
+    <ul>
+      <li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Meteorologiska institutets öppna data</a></li>
+      <li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundations integritetspolicy</a></li>
+    </ul>
+
+    <h2>4. Annonser</h2>
+    <p>Gratisversionen använder Google AdMob. Google och dess partner kan behandla exempelvis IP-adress, annonsidentifierare, uppgifter om enheten och appanvändningen samt uppgifter om annonsvisningar och interaktioner för leverans och mätning av annonser, bedrägeribekämpning och, när det är tillämpligt, personalisering.</p>
+    <p>Inom EES, Storbritannien och Schweiz använder appen Googles User Messaging Platform för annonssamtycke. Användaren kan ändra sitt val via appens annonsintegritetsinställningar när Google kräver att funktionen visas.</p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" rel="noopener">Googles integritetspolicy</a></li>
+      <li><a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Googles användning av information från partnerappar</a></li>
+    </ul>
+
+    <h2>5. Pro-prenumerationer och betalningar</h2>
+    <p>Salamatutka Pro köps via Google Plays faktureringssystem. Google behandlar betalning, förnyelse, uppsägning och uppgifter om betalningsmetod. AspByte tar inte emot eller lagrar användarens betalkorts- eller andra betalningsuppgifter.</p>
+    <p>Appen kontrollerar den aktiva Pro-prenumerationen via Google Play. Pro-status och tidpunkten för den senaste lyckade kontrollen lagras lokalt under högst tre dagar. Prenumerationen kan hanteras eller sägas upp i Google Plays prenumerationshantering.</p>
+    <ul><li><a href="https://play.google.com/store/account/subscriptions" rel="noopener">Hantera prenumerationer i Google Play</a></li></ul>
+
+    <h2>6. Lokalt lagrade uppgifter</h2>
+    <p>Appen lagrar lokalt vald plats och radie, blixtvaktens status, tystade aviseringar, senaste kontrolltid, senast aviserade blixt, språkval och Pro-kontrollstatus. AspByte har inget användarkonto eller egen bakgrundsserver och tar inte emot dessa inställningar.</p>
+    <p>Lokala uppgifter finns kvar tills användaren rensar appens data eller avinstallerar den. Google Play lagrar köphistorik enligt sin policy och sina rättsliga skyldigheter.</p>
+
+    <h2>7. Aviseringar och bakgrundsaktivitet</h2>
+    <p>Om användaren tillåter aviseringar och startar blixtvakten gör appen bakgrundskontroller enligt Androids begränsningar. Kontrollen använder det sparade området och hämtar inte enhetens aktuella GPS-position i bakgrunden.</p>
+
+    <h2>8. Skydd och delning</h2>
+    <p>Anslutningar till Meteorologiska institutet, OpenStreetMap och Google använder HTTPS-kryptering. AspByte säljer inte användaruppgifter. Uppgifter överförs till tjänsteleverantörerna ovan endast för appens funktioner, karta, annonser och prenumerationer.</p>
+
+    <h2>9. Barns integritet</h2>
+    <p>Salamatutka riktar sig inte särskilt till barn under 13 år. En vårdnadshavare kan kontakta AspByte om ett barn misstänks ha skickat personuppgifter.</p>
+
+    <h2>10. Val, rättigheter och radering</h2>
+    <p>Användaren kan neka plats- eller aviseringsbehörighet och välja plats genom namnsökning. Behörigheter kan återkallas i Android-inställningarna. Lokala uppgifter kan tas bort genom att rensa appdata eller avinstallera appen.</p>
+    <p>För integritetsfrågor och tillämpliga dataskyddsrättigheter: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Begäranden som gäller tredje parts behandling kan behöva riktas till respektive tjänsteleverantör.</p>
+
+    <h2>11. Ändringar</h2>
+    <p>Policyn kan uppdateras när appen eller tjänsteleverantörerna förändras. Den aktuella versionen och uppdateringsdatumet publiceras på denna sida.</p>
+    <p class="notice">Salamatutka garanterar inte att observationerna är fullständiga eller fördröjningsfria. Följ myndigheternas väder- och faromeddelanden.</p>
+    <p><a href="index.html">← Till AspBytes startsida</a></p>
+  </section>
+
+  <section data-policy="en" hidden>
+    <h1>Salamatutka Privacy Policy</h1>
+    <p class="muted">Primary language: Finnish · Effective 11 July 2026 · Updated 13 July 2026</p>
+    <p>This Privacy Policy describes how AspByte handles information in the Salamatutka Android app. Contact: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
+
+    <h2>1. Purpose</h2>
+    <p>Salamatutka displays lightning observations on a map and can notify users of a new lightning strike within a selected area. The app is not an official hazard warning or safety service.</p>
+
+    <h2>2. Location and place search</h2>
+    <p>Using device location is optional. The app requests location permission only when the user presses the GPS button. Location selects the centre of the alert area. The app does not request continuous background location or use location for advertising targeting.</p>
+    <p>The selected place, coordinates and radius are stored locally on the device. Searching by place name or address uses a geocoding service provided by the Android device. Its provider may process search text under its own policy.</p>
+
+    <h2>3. Lightning data and map</h2>
+    <p>The app retrieves observations from the Finnish Meteorological Institute open data WFS service. Requests include the selected map area and time period. The service also receives ordinary technical network information such as the IP address.</p>
+    <p>The map uses OpenStreetMap tiles. The map service may receive the IP address, technical network information and information about the displayed map area.</p>
+    <ul>
+      <li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Finnish Meteorological Institute open data</a></li>
+      <li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundation Privacy Policy</a></li>
+    </ul>
+
+    <h2>4. Advertising</h2>
+    <p>The free version uses Google AdMob. Google and its partners may process information such as IP address, advertising identifier, device and app usage data, and ad display and interaction data to deliver and measure ads, prevent fraud and, where applicable, personalise advertising.</p>
+    <p>In the EEA, the United Kingdom and Switzerland, the app uses Google's User Messaging Platform for advertising consent. Users can change their choice through the app's ad privacy settings when Google requires the feature to be displayed.</p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+      <li><a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Google's use of information from partner apps</a></li>
+    </ul>
+
+    <h2>5. Pro subscriptions and payments</h2>
+    <p>Salamatutka Pro is purchased through Google Play's billing system. Google processes payments, renewals, cancellations and payment method information. AspByte does not receive or store the user's payment card or other payment method details.</p>
+    <p>The app checks the active Pro subscription with Google Play. Pro status and the latest successful verification time are stored locally for up to three days. Subscriptions can be managed or cancelled in Google Play's subscription centre.</p>
+    <ul><li><a href="https://play.google.com/store/account/subscriptions" rel="noopener">Manage subscriptions in Google Play</a></li></ul>
+
+    <h2>6. Locally stored information</h2>
+    <p>The app locally stores the selected place and radius, lightning watch status, notification mute state, latest check time, latest notified lightning observation, language choice and Pro verification status. AspByte has no user account system or backend server and does not receive these settings.</p>
+    <p>Local information remains until the user clears app data or uninstalls the app. Google Play retains purchase history under its policies and legal obligations.</p>
+
+    <h2>7. Notifications and background activity</h2>
+    <p>If notifications are allowed and lightning watch is enabled, the app performs background checks as permitted by Android. Checks use the saved area and do not retrieve the device's current GPS location in the background.</p>
+
+    <h2>8. Security and sharing</h2>
+    <p>Connections to the Finnish Meteorological Institute, OpenStreetMap and Google use HTTPS encryption. AspByte does not sell user data. Information is transmitted to the providers above only to provide app functionality, maps, advertising and subscriptions.</p>
+
+    <h2>9. Children's privacy</h2>
+    <p>Salamatutka is not specifically directed at children under 13. A parent or guardian can contact AspByte if they believe a child has submitted personal information.</p>
+
+    <h2>10. Choices, rights and deletion</h2>
+    <p>Users can decline location or notification permission and select a place by name search. Permissions can be withdrawn in Android settings. Local data can be removed by clearing app data or uninstalling the app.</p>
+    <p>For privacy questions and applicable data protection rights: <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Requests concerning third-party processing may need to be directed to the relevant provider.</p>
+
+    <h2>11. Changes</h2>
+    <p>The policy may be updated when the app or service providers change. The current version and update date will be published on this page.</p>
+    <p class="notice">Salamatutka does not guarantee complete or delay-free observations. Follow official weather and hazard warnings.</p>
+    <p><a href="index.html">← AspByte home page</a></p>
+  </section>
+</article></main>
+<script>
+(function(){
+  var buttons=document.querySelectorAll('[data-lang]');
+  var panels=document.querySelectorAll('[data-policy]');
+  var titles={fi:'Salamatutkan tietosuojakäytäntö – AspByte',sv:'Integritetspolicy för Salamatutka – AspByte',en:'Salamatutka Privacy Policy – AspByte'};
+  function show(lang){
+    for(var i=0;i<panels.length;i++)panels[i].hidden=panels[i].getAttribute('data-policy')!==lang;
+    for(var j=0;j<buttons.length;j++)buttons[j].setAttribute('aria-pressed',buttons[j].getAttribute('data-lang')===lang?'true':'false');
+    document.documentElement.lang=lang;document.title=titles[lang];window.scrollTo(0,0);
+  }
+  for(var i=0;i<buttons.length;i++)buttons[i].addEventListener('click',function(){show(this.getAttribute('data-lang'))});
+  show('fi');
+}());
+</script>
 </body>
 </html>
