@@ -40,7 +40,7 @@
       privacyPointThree: "Ilmainen versio käyttää Google AdMobia. Mainosvalintoja hallitaan Googlen suostumusnäkymällä.", readPrivacy: "Lue koko tietosuojakäytäntö →",
       safetyTitle: "Turvallisuushuomautus", safetyText: "Salamatutka ei ole virallinen vaaravaroitus- tai turvallisuuspalvelu. Havainnoissa ja päivityksissä voi olla viivettä. Noudata aina viranomaisten sää- ja vaaratiedotteita.",
       contactKicker: "AspByte", contactTitle: "Kysyttävää Salamatutkasta?", contactText: "Palautteet, virheilmoitukset ja yhteistyöehdotukset voi lähettää sähköpostitse.", footerMade: "Tehty Suomessa",
-      policyPageTitle: "Salamatutkan tietosuojakäytäntö – AspByte", policyTitle: "Salamatutkan tietosuojakäytäntö", policyUpdated: "Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 13.7.2026", backHome: "← Takaisin Salamatutkan etusivulle"
+      policyPageTitle: "Salamatutkan tietosuojakäytäntö – AspByte", policyTitle: "Salamatutkan tietosuojakäytäntö", policyUpdated: "Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 14.7.2026", backHome: "← Takaisin Salamatutkan etusivulle"
     },
     sv: {
       pageTitle: "Blixtradar – AspByte", pageDescription: "Blixtradar visar färska blixtobservationer på kartan och meddelar om blixtar i det valda området.",
@@ -79,7 +79,7 @@
       privacyPointThree: "Gratisversionen använder Google AdMob. Annonsval hanteras i Googles samtyckesvy.", readPrivacy: "Läs hela integritetspolicyn →",
       safetyTitle: "Säkerhetsinformation", safetyText: "Blixtradar är inte en officiell varnings- eller säkerhetstjänst. Observationer och uppdateringar kan vara fördröjda. Följ alltid myndigheternas väder- och faromeddelanden.",
       contactKicker: "AspByte", contactTitle: "Frågor om Blixtradar?", contactText: "Feedback, felrapporter och samarbetsförslag kan skickas via e-post.", footerMade: "Skapad i Finland",
-      policyPageTitle: "Blixtradars integritetspolicy – AspByte", policyTitle: "Blixtradars integritetspolicy", policyUpdated: "Gäller från 13.7.2026 · Senast uppdaterad 13.7.2026", backHome: "← Tillbaka till Blixtradars startsida"
+      policyPageTitle: "Blixtradars integritetspolicy – AspByte", policyTitle: "Blixtradars integritetspolicy", policyUpdated: "Gäller från 13.7.2026 · Senast uppdaterad 14.7.2026", backHome: "← Tillbaka till Blixtradars startsida"
     },
     en: {
       pageTitle: "Lightning Radar – AspByte", pageDescription: "Lightning Radar shows recent lightning observations on the map and alerts you to lightning in your selected area.",
@@ -118,7 +118,7 @@
       privacyPointThree: "The Free version uses Google AdMob. Ad choices are managed through Google's consent interface.", readPrivacy: "Read the full privacy policy →",
       safetyTitle: "Safety notice", safetyText: "Lightning Radar is not an official hazard warning or safety service. Observations and updates may be delayed. Always follow official weather and hazard warnings.",
       contactKicker: "AspByte", contactTitle: "Questions about Lightning Radar?", contactText: "Feedback, bug reports, and partnership enquiries are welcome by email.", footerMade: "Made in Finland",
-      policyPageTitle: "Lightning Radar Privacy Policy – AspByte", policyTitle: "Lightning Radar Privacy Policy", policyUpdated: "Effective 13 July 2026 · Last updated 13 July 2026", backHome: "← Back to the Lightning Radar home page"
+      policyPageTitle: "Lightning Radar Privacy Policy – AspByte", policyTitle: "Lightning Radar Privacy Policy", policyUpdated: "Effective 13 July 2026 · Last updated 14 July 2026", backHome: "← Back to the Lightning Radar home page"
     }
   };
 
