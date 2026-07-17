@@ -29,7 +29,7 @@
     <header class="policy-hero">
       <p class="kicker">AspByte</p>
       <h1 data-i18n="policyTitle">Salamatutkan tietosuojakäytäntö</h1>
-      <p data-i18n="policyUpdated">Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 14.7.2026</p>
+      <p data-i18n="policyUpdated">Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 17.7.2026</p>
     </header>
 
     <article class="policy-article" data-lang-section="fi">
@@ -43,9 +43,10 @@
       <p>Paikan tai osoitteen haku käyttää Android-laitteen tarjoamaa paikkahakupalvelua. Palveluntarjoaja voi käsitellä hakutekstiä ja tavallisia teknisiä verkkotietoja oman tietosuojakäytäntönsä mukaisesti.</p>
 
       <h2>3. Salamahavainnot ja kartta</h2>
-      <p>Sovellus hakee salamahavainnot Ilmatieteen laitoksen avoimesta WFS-palvelusta. Kysely sisältää valittuun alueeseen ja ajanjaksoon perustuvan karttarajauksen. Palvelu saa samalla tavallisia teknisiä verkkotietoja, kuten IP-osoitteen.</p>
+      <p>Sovellus hakee salamahavainnot ensisijaisesti AspByten Google Cloud Run -palvelusta. Palvelu hakee Ilmatieteen laitoksen avoimen WFS-salamasyötteen noin kerran minuutissa ja tallentaa Google Firestoreen kaikille sovelluksille yhteisen, enintään 15 minuuttia vanhan havaintosyötteen. Firestoreen tallennetaan vain julkisia salamahavaintoja sekä niistä muodostettuja tunnisteita ja aikaleimoja päällekkäisten ilmoitusten estämiseksi.</p>
+      <p>Pilvipalvelun ollessa poissa käytöstä tai tiedon ollessa vanhentunutta sovellus voi hakea havainnot suoraan Ilmatieteen laitokselta. Tällainen varahaku voi sisältää pyydetyn karttarajauksen. Salamatutkan rajapinta ja Ilmatieteen laitoksen palvelu saavat tavallisia teknisiä verkkotietoja, kuten IP-osoitteen, ja Salamatutkan rajapinta saa sovelluksen version sisältävän User-Agent-tiedon. Salamatutkan sovelluspalvelin käyttää lähde-IP-osoitteesta yksisuuntaisesti muodostettua tiivistettä vain lyhytaikaiseen nopeusrajoitukseen prosessin muistissa; tiivistettä ei tallenneta Firestoreen tai käyttäjäprofiiliin. Google Cloud voi käsitellä palvelun teknisiä pyyntö- ja lokitietoja oman tietosuojakäytäntönsä mukaisesti.</p>
       <p>Karttapohja käyttää OpenStreetMap-karttatiiliä. Karttapalvelu voi saada IP-osoitteen, verkkopyynnön teknisiä tietoja ja tiedon näytetystä kartta-alueesta.</p>
-      <ul><li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Ilmatieteen laitoksen avoin data</a></li><li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundationin tietosuojakäytäntö</a></li></ul>
+      <ul><li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Ilmatieteen laitoksen avoin data</a></li><li><a href="https://cloud.google.com/privacy" rel="noopener">Google Cloudin tietosuoja</a></li><li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundationin tietosuojakäytäntö</a></li></ul>
 
       <h2>4. Mainokset ja Googlen suostumusratkaisu</h2>
       <p>Ilmainen versio käyttää Google AdMobia bannerimainosten näyttämiseen. Google ja sen mainoskumppanit voivat käsitellä IP-osoitetta, mainostunnistetta, laite- ja sovellustietoja sekä mainosten näyttö- ja vuorovaikutustietoja mainosten toimittamiseen, mittaamiseen ja petosten torjuntaan.</p>
@@ -59,11 +60,14 @@
       <p>Play Kaupasta asennettu sovellus voi tarkistaa Google Playn päivityspalvelusta, onko käyttäjälle saatavilla uudempi versio. Tarkistus voi välittää Googlelle sovelluksen ja asennetun version tunnistetietoja sekä tavallisia teknisiä verkkotietoja. AspByte ei ylläpidä omaa päivitysrekisteriä.</p>
 
       <h2>7. Laitteelle tallennettavat tiedot</h2>
-      <p>Valittu paikka, koordinaatit, hälytyssäde, salamavahdin tila, kielivalinta, käyttöönottovaiheiden tila, päivitysmuistutuksen aika ja viimeksi ilmoitetun salamahavainnon tiedot tallennetaan paikallisesti laitteelle. AspByte ei ylläpidä käyttäjätiliä tai omaa taustapalvelinta, johon nämä asetukset lähetettäisiin.</p>
+      <p>Valittu paikka, tarkat koordinaatit, hälytyssäde, salamavahdin tila, kielivalinta, käyttöönottovaiheiden tila, päivitysmuistutuksen aika ja viimeksi ilmoitetun salamahavainnon tiedot tallennetaan paikallisesti laitteelle. AspByte ei ylläpidä käyttäjätiliä, eikä tarkkaa seurantapaikkaa tai hälytyssäteen arvoa lähetetä tai tallenneta Salamatutkan palvelimelle.</p>
       <p>Paikalliset tiedot säilyvät, kunnes käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</p>
 
       <h2>8. Ilmoitukset ja taustatoiminta</h2>
-      <p>Jos käyttäjä sallii ilmoitukset ja käynnistää salamavahdin, sovellus tekee Androidin sallimia tarkistuksia myös taustalla. Tarkistus käyttää aiemmin tallennettua aluetta, ei laitteen ajantasaista GPS-sijaintia. Android voi viivästyttää tai estää taustatyötä akun ja laitteen asetusten perusteella.</p>
+      <p>Jos käyttäjä sallii ilmoitukset ja käynnistää salamavahdin, sovellus tilaa Firebase Cloud Messagingista tallennetun hälytysalueen peittävät kiinteät, noin 5,5 × 5,5 kilometrin karttaruudut. Firebase/Google voi päätellä tilatuista ruuduista likimääräisen seuranta-alueen, mutta tarkka keskipiste ja säde säilyvät laitteella. Salamatutkan palvelin julkaisee ruudun aiheeseen vain julkisen salamahavainnon koordinaatit ja aikaleiman, ja puhelin tarkistaa lopuksi, onko havainto tarkasti käyttäjän valitseman ympyrän sisällä.</p>
+      <p>Firebase Cloud Messaging käsittelee ilmoitusten toimittamista varten Firebase-asennustunnistetta, sovelluksen versiota sekä Firebase-käyttäjäagenttiin kuuluvia sovellus- ja laitetietoja. Salamatutkan palvelin ei vastaanota tai tallenna laitteen FCM-rekisteröintitunnusta. Salamavahdin poistaminen käytöstä poistaa sovelluksen karttaruututilaukset.</p>
+      <p>Androidin sallima noin 15 minuutin taustatarkistus toimii ilmoitusten varajärjestelmänä ja käyttää aiemmin tallennettua aluetta, ei laitteen ajantasaista GPS-sijaintia. Android voi akun ja laitteen asetusten perusteella viivästyttää tai estää sekä push-ilmoituksen että taustatarkistuksen, joten toimitusaikaa ei voida taata.</p>
+      <ul><li><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebasen tietosuoja ja tietojen käsittely</a></li></ul>
 
       <h2>9. Diagnostiikka ja vapaaehtoiset tukipyynnöt</h2>
       <p>Sovellus säilyttää laitteella rajatun määrän viimeisimpiä teknisiä tapahtumia ja virheitä ongelmien selvittämistä varten. Diagnostiikkaraportti voi sisältää sovellus- ja Android-version, puhelimen valmistajan ja mallin, laitteen teknisiä tietoja, kieli- ja aikavyöhykeasetuksen, verkkoyhteyden ja käyttöoikeuksien tilan, salamavahdin ja Pro-tilan sekä viimeisimmät tekniset tapahtumat ja virhetyypit. Tarkkoja koordinaatteja ja käyttäjän kirjoittamia hakutekstejä ei lisätä raporttiin.</p>
@@ -71,13 +75,14 @@
       <p>Raportti luodaan vain käyttäjän valinnalla ja annetaan käyttäjän valitsemalle sähköposti- tai jakosovellukselle. Sovellus ei lähetä raporttia automaattisesti. Jos käyttäjä lähettää raportin AspBytelle, AspByte käsittelee raportin sekä mahdollisen lähettäjän sähköpostiosoitteen ja vapaaehtoisen viestin tukipyynnön käsittelemiseksi. Tukitiedot säilytetään vain niin kauan kuin ongelman selvittäminen tai lakisääteiset velvoitteet edellyttävät. Niitä koskevan tarkastus- tai poistopyynnön voi lähettää osoitteeseen <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
 
       <h2>10. Tietojen suojaaminen ja jakaminen</h2>
-      <p>Verkkoyhteydet Ilmatieteen laitoksen, OpenStreetMapin ja Googlen palveluihin käyttävät HTTPS-salausta. AspByte ei myy käyttäjätietoja. Tietoja välittyy edellä kuvatuille palveluntarjoajille vain sovelluksen toimintojen, kartan, mainosten, tilausten ja päivitystarkistuksen toteuttamiseksi.</p>
+      <p>Verkkoyhteydet Salamatutkan Google Cloud -palveluun, Ilmatieteen laitokselle, OpenStreetMapiin ja Googlen palveluihin käyttävät HTTPS-salausta. AspByte ei myy käyttäjätietoja. Tietoja käsittelevät edellä kuvatuissa tarkoituksissa Google Cloud Run ja Firestore, Firebase Cloud Messaging, Google AdMob ja User Messaging Platform, Google Play Billing ja päivityspalvelu, Androidin paikkahakupalvelun tarjoaja, OpenStreetMap sekä varayhteyden aikana Ilmatieteen laitos.</p>
+      <p>Salamatutkan palvelin ei tallenna käyttäjän sijaintia, tarkkaa hälytysaluetta, käyttäjätiliä, mainostunnistetta, ostotietoja tai FCM-rekisteröintitunnusta.</p>
 
       <h2>11. Lasten tietosuoja</h2>
       <p>Salamatutkaa ei ole suunnattu erityisesti alle 13-vuotiaille. Jos huoltaja epäilee lapsen lähettäneen henkilötietoja AspBytelle, hän voi ottaa yhteyttä yllä mainittuun sähköpostiosoitteeseen.</p>
 
       <h2>12. Käyttäjän valinnat ja oikeudet</h2>
-      <p>Käyttäjä voi olla antamatta sijainti- tai ilmoituslupaa. Androidin luvat voi peruuttaa laitteen asetuksissa, mainosvalintoja voi muuttaa sovelluksen tietosuoja-asetuksista ja paikalliset tiedot voi poistaa Androidin sovellusasetuksista tai poistamalla sovelluksen.</p>
+      <p>Käyttäjä voi olla antamatta sijainti- tai ilmoituslupaa. Salamavahdin voi poistaa käytöstä, jolloin sovellus poistaa Firebase-karttaruututilaukset. Androidin luvat voi peruuttaa laitteen asetuksissa, mainosvalintoja voi muuttaa sovelluksen tietosuoja-asetuksista ja paikalliset tiedot voi poistaa Androidin sovellusasetuksista tai poistamalla sovelluksen. Googlen ja Firebasen käsittelemien tunnisteiden säilytys ja poistaminen määräytyy niiden omien tietosuojakäytäntöjen mukaan.</p>
       <p>Tietosuojaa koskevissa kysymyksissä voi ottaa yhteyttä osoitteeseen <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Kolmansien osapuolten käsittelemien tietojen osalta pyyntö voidaan joutua osoittamaan kyseiselle palveluntarjoajalle.</p>
 
       <h2>13. Muutokset</h2>
@@ -96,9 +101,10 @@
       <p>Sökning efter en plats eller adress använder den platssökningstjänst som Android-enheten tillhandahåller. Tjänsteleverantören kan behandla söktexten och vanliga tekniska nätverksuppgifter enligt sin egen integritetspolicy.</p>
 
       <h2>3. Blixtobservationer och karta</h2>
-      <p>Appen hämtar blixtobservationer från Meteorologiska institutets öppna WFS-tjänst. Frågan innehåller en kartavgränsning som baseras på valt område och tidsintervall. Tjänsten får samtidigt vanliga tekniska nätverksuppgifter, såsom IP-adressen.</p>
+      <p>Appen hämtar i första hand blixtobservationer från AspBytes tjänst i Google Cloud Run. Tjänsten hämtar Meteorologiska institutets öppna WFS-blixtdata ungefär en gång per minut och lagrar ett gemensamt observationsflöde med högst 15 minuter gamla observationer i Google Firestore. Firestore innehåller endast offentliga blixtobservationer samt identifierare och tidsstämplar som bildats av dem för att förhindra dubbla aviseringar.</p>
+      <p>Om molntjänsten inte är tillgänglig eller om uppgifterna är för gamla kan appen hämta observationerna direkt från Meteorologiska institutet. En sådan reservbegäran kan innehålla det begärda kartområdet. Blixtradars gränssnitt och Meteorologiska institutets tjänst får vanliga tekniska nätverksuppgifter, såsom IP-adressen, och Blixtradars gränssnitt får en User-Agent som innehåller appversionen. Blixtradars appserver använder en envägshash av källans IP-adress endast för kortvarig hastighetsbegränsning i processminnet; hashen lagras inte i Firestore eller i en användarprofil. Google Cloud kan behandla tekniska begäranden och logguppgifter enligt sin egen integritetspolicy.</p>
       <p>Kartunderlaget använder kartplattor från OpenStreetMap. Karttjänsten kan få IP-adressen, tekniska uppgifter om nätverksbegäran och information om det visade kartområdet.</p>
-      <ul><li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Meteorologiska institutets öppna data</a></li><li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundations integritetspolicy</a></li></ul>
+      <ul><li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Meteorologiska institutets öppna data</a></li><li><a href="https://cloud.google.com/privacy" rel="noopener">Google Clouds integritet</a></li><li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundations integritetspolicy</a></li></ul>
 
       <h2>4. Annonser och Googles samtyckeslösning</h2>
       <p>Gratisversionen använder Google AdMob för att visa bannerannonser. Google och dess annonspartner kan behandla IP-adress, annonsidentifierare, enhets- och appuppgifter samt information om annonsvisningar och interaktioner för leverans, mätning och bedrägeribekämpning.</p>
@@ -112,11 +118,14 @@
       <p>En app som installerats från Play Butik kan kontrollera hos Google Plays uppdateringstjänst om en nyare version finns tillgänglig för användaren. Kontrollen kan överföra app- och versionsidentifierare samt vanliga tekniska nätverksuppgifter till Google. AspByte har inget eget uppdateringsregister.</p>
 
       <h2>7. Uppgifter som lagras på enheten</h2>
-      <p>Vald plats, koordinater, varningsradie, blixtvaktens status, språkval, introduktionsstatus, tidpunkt för uppdateringspåminnelse och uppgifter om den senast aviserade blixten lagras lokalt på enheten. AspByte har inget användarkonto eller egen server som dessa inställningar skickas till.</p>
+      <p>Vald plats, exakta koordinater, varningsradie, blixtvaktens status, språkval, introduktionsstatus, tidpunkt för uppdateringspåminnelse och uppgifter om den senast aviserade blixten lagras lokalt på enheten. AspByte har inget användarkonto, och den exakta bevakningsplatsen eller radien skickas inte till eller lagras på Blixtradars server.</p>
       <p>Lokala uppgifter finns kvar tills användaren rensar appens data eller avinstallerar appen.</p>
 
       <h2>8. Aviseringar och bakgrundsaktivitet</h2>
-      <p>Om användaren tillåter aviseringar och startar blixtvakten gör appen även kontroller i bakgrunden när Android tillåter det. Kontrollen använder det tidigare sparade området, inte enhetens aktuella GPS-position. Android kan fördröja eller stoppa bakgrundsarbete beroende på batteri- och enhetsinställningar.</p>
+      <p>Om användaren tillåter aviseringar och startar blixtvakten prenumererar appen i Firebase Cloud Messaging på fasta kartceller på cirka 5,5 × 5,5 kilometer som täcker det sparade varningsområdet. Firebase/Google kan utifrån cellerna härleda ett ungefärligt bevakningsområde, men den exakta mittpunkten och radien stannar på enheten. Blixtradars server publicerar endast den offentliga blixtobservationens koordinater och tidsstämpel till cellämnet, och telefonen kontrollerar slutligen om observationen ligger exakt inom den valda cirkeln.</p>
+      <p>Firebase Cloud Messaging behandlar ett Firebase-installations-ID, appversionen samt app- och enhetsuppgifter i Firebase-användaragenten för att leverera aviseringar. Blixtradars server tar inte emot eller lagrar enhetens FCM-registreringstoken. När blixtvakten stängs av tar appen bort kartcellsprenumerationerna.</p>
+      <p>Androids bakgrundskontroll ungefär var 15:e minut fungerar som reserv och använder det tidigare sparade området, inte enhetens aktuella GPS-position. Android kan fördröja eller stoppa både push-aviseringar och bakgrundskontroller beroende på batteri- och enhetsinställningar, så leveranstiden kan inte garanteras.</p>
+      <ul><li><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase integritet och databehandling</a></li></ul>
 
       <h2>9. Diagnostik och frivilliga supportförfrågningar</h2>
       <p>Appen lagrar en begränsad mängd av de senaste tekniska händelserna och felen på enheten för felsökning. En diagnostikrapport kan innehålla app- och Android-version, telefonens tillverkare och modell, tekniska enhetsuppgifter, språk- och tidszonsinställning, nätverks- och behörighetsstatus, blixtvaktens och Pro-status samt de senaste tekniska händelserna och feltyperna. Exakta koordinater och söktext som användaren har skrivit inkluderas inte i rapporten.</p>
@@ -124,13 +133,14 @@
       <p>Rapporten skapas endast när användaren väljer det och lämnas till den e-post- eller delningsapp som användaren väljer. Appen skickar inte rapporten automatiskt. Om användaren skickar rapporten till AspByte behandlar AspByte rapporten samt avsändarens eventuella e-postadress och frivilliga meddelande för att hantera supportärendet. Supportuppgifter sparas endast så länge som felsökningen eller rättsliga skyldigheter kräver. En begäran om tillgång till eller radering av uppgifterna kan skickas till <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
 
       <h2>10. Skydd och delning av uppgifter</h2>
-      <p>Nätverksanslutningar till Meteorologiska institutet, OpenStreetMap och Googles tjänster använder HTTPS-kryptering. AspByte säljer inte användaruppgifter. Uppgifter överförs till de beskrivna leverantörerna endast för appfunktioner, karta, annonser, prenumerationer och uppdateringskontroll.</p>
+      <p>Nätverksanslutningar till Blixtradars Google Cloud-tjänst, Meteorologiska institutet, OpenStreetMap och Googles tjänster använder HTTPS-kryptering. AspByte säljer inte användaruppgifter. Uppgifter behandlas för de beskrivna ändamålen av Google Cloud Run och Firestore, Firebase Cloud Messaging, Google AdMob och User Messaging Platform, Google Play Billing och uppdateringstjänsten, leverantören av Androids platssökning, OpenStreetMap samt Meteorologiska institutet när reservanslutningen används.</p>
+      <p>Blixtradars server lagrar inte användarens position, exakta varningsområde, användarkonto, annonsidentifierare, köpuppgifter eller FCM-registreringstoken.</p>
 
       <h2>11. Barns integritet</h2>
       <p>Blixtradar är inte särskilt riktad till barn under 13 år. En vårdnadshavare som tror att ett barn har skickat personuppgifter till AspByte kan kontakta oss på e-postadressen ovan.</p>
 
       <h2>12. Användarens val och rättigheter</h2>
-      <p>Användaren kan neka plats- eller aviseringsbehörighet. Android-behörigheter kan återkallas i enhetsinställningarna, annonsval kan ändras i appens integritetsinställningar och lokala data kan tas bort via Androids appinställningar eller genom att avinstallera appen.</p>
+      <p>Användaren kan neka plats- eller aviseringsbehörighet. När blixtvakten stängs av tar appen bort Firebase-kartcellsprenumerationerna. Android-behörigheter kan återkallas i enhetsinställningarna, annonsval kan ändras i appens integritetsinställningar och lokala data kan tas bort via Androids appinställningar eller genom att avinstallera appen. Lagring och radering av identifierare som behandlas av Google och Firebase följer deras egna integritetspolicyer.</p>
       <p>Integritetsfrågor kan skickas till <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Begäranden som gäller uppgifter som behandlas av tredje part kan behöva riktas till den berörda leverantören.</p>
 
       <h2>13. Ändringar</h2>
@@ -149,9 +159,10 @@
       <p>Searching for a place or address uses the geocoding service provided by the Android device. The service provider may process the search text and ordinary technical network information under its own privacy policy.</p>
 
       <h2>3. Lightning observations and map</h2>
-      <p>The app retrieves lightning observations from the Finnish Meteorological Institute's open WFS service. The query contains a map boundary based on the selected area and time period. The service also receives ordinary technical network information such as the IP address.</p>
+      <p>The app primarily retrieves lightning observations from AspByte's service on Google Cloud Run. The service fetches the Finnish Meteorological Institute's open WFS lightning feed about once per minute and stores a shared feed containing observations no more than 15 minutes old in Google Firestore. Firestore contains only public lightning observations and identifiers and timestamps derived from them to prevent duplicate alerts.</p>
+      <p>If the cloud service is unavailable or its data is stale, the app may retrieve observations directly from the Finnish Meteorological Institute. Such a fallback request may contain the requested map boundary. The Lightning Radar API and the FMI service receive ordinary technical network information such as the IP address, and the Lightning Radar API receives a User-Agent containing the app version. The Lightning Radar application server uses a one-way hash of the source IP only for short-lived rate limiting in process memory; the hash is not stored in Firestore or a user profile. Google Cloud may process technical request and log information under its own privacy policy.</p>
       <p>The map base uses OpenStreetMap tiles. The map service may receive the IP address, technical request information, and information about the map area displayed.</p>
-      <ul><li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Finnish Meteorological Institute Open Data</a></li><li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundation Privacy Policy</a></li></ul>
+      <ul><li><a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener">Finnish Meteorological Institute Open Data</a></li><li><a href="https://cloud.google.com/privacy" rel="noopener">Google Cloud Privacy</a></li><li><a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundation Privacy Policy</a></li></ul>
 
       <h2>4. Advertising and Google's consent solution</h2>
       <p>The Free version uses Google AdMob to display banner ads. Google and its advertising partners may process the IP address, advertising identifier, device and app information, and ad display and interaction information for delivery, measurement, and fraud prevention.</p>
@@ -165,11 +176,14 @@
       <p>An app installed through Google Play may check the Google Play update service to see whether a newer version is available to the user. The check may provide Google with app and installed-version identifiers and ordinary technical network information. AspByte does not maintain its own update registry.</p>
 
       <h2>7. Information stored on the device</h2>
-      <p>The selected place, coordinates, alert radius, Lightning Watch state, language choice, onboarding state, update reminder time, and details of the last notified lightning observation are stored locally on the device. AspByte does not maintain a user account or backend server to which these settings are sent.</p>
+      <p>The selected place, exact coordinates, alert radius, Lightning Watch state, language choice, onboarding state, update reminder time, and details of the last notified lightning observation are stored locally on the device. AspByte does not maintain a user account, and the exact monitored place or alert-radius value is not sent to or stored by the Lightning Radar server.</p>
       <p>Local information remains until the user clears the app's data or uninstalls the app.</p>
 
       <h2>8. Notifications and background activity</h2>
-      <p>If the user allows notifications and starts Lightning Watch, the app also performs checks in the background when Android permits. The check uses the previously saved area, not the device's current GPS location. Android may delay or prevent background work depending on battery and device settings.</p>
+      <p>If the user allows notifications and starts Lightning Watch, the app subscribes through Firebase Cloud Messaging to fixed map cells of approximately 5.5 × 5.5 kilometres that cover the saved alert area. Firebase/Google can infer an approximate monitored area from these cells, but the exact centre and radius remain on the device. The Lightning Radar server publishes only the public strike coordinates and timestamp to the cell topic, and the phone performs the final check that the observation is inside the exact circle selected by the user.</p>
+      <p>Firebase Cloud Messaging processes a Firebase Installation ID, the app version, and app and device information included in the Firebase user agent to deliver notifications. The Lightning Radar server does not receive or store the device's FCM registration token. Disabling Lightning Watch removes the app's map-cell subscriptions.</p>
+      <p>Android's approximately 15-minute background check remains as a fallback and uses the previously saved area, not the device's current GPS location. Android may delay or prevent both push notifications and background checks based on battery and device settings, so delivery time cannot be guaranteed.</p>
+      <ul><li><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy and data processing</a></li></ul>
 
       <h2>9. Diagnostics and voluntary support requests</h2>
       <p>The app stores a limited amount of recent technical events and errors on the device for troubleshooting. A diagnostic report may contain the app and Android versions, phone manufacturer and model, technical device information, language and time-zone settings, network and permission status, Lightning Watch and Pro status, and recent technical events and error types. Exact coordinates and search text entered by the user are not included in the report.</p>
@@ -177,13 +191,14 @@
       <p>A report is created only when the user chooses to do so and is passed to the email or sharing app selected by the user. The app does not send reports automatically. If the user sends a report to AspByte, AspByte processes the report and any sender email address and voluntary message to handle the support request. Support information is retained only as long as troubleshooting or legal obligations require. Requests to access or delete this information can be sent to <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>.</p>
 
       <h2>10. Security and sharing</h2>
-      <p>Network connections to the Finnish Meteorological Institute, OpenStreetMap, and Google services use HTTPS encryption. AspByte does not sell user information. Information is transferred to the providers described above only to provide app functions, maps, advertising, subscriptions, and update checks.</p>
+      <p>Network connections to the Lightning Radar Google Cloud service, the Finnish Meteorological Institute, OpenStreetMap, and Google services use HTTPS encryption. AspByte does not sell user information. Information is processed for the purposes described above by Google Cloud Run and Firestore, Firebase Cloud Messaging, Google AdMob and User Messaging Platform, Google Play Billing and update services, the Android geocoding provider, OpenStreetMap, and the Finnish Meteorological Institute when the fallback connection is used.</p>
+      <p>The Lightning Radar server does not store the user's location, exact alert area, user account, advertising identifier, purchase information, or FCM registration token.</p>
 
       <h2>11. Children's privacy</h2>
       <p>Lightning Radar is not specifically directed at children under 13. A guardian who believes a child has sent personal information to AspByte can contact us at the email address above.</p>
 
       <h2>12. User choices and rights</h2>
-      <p>Users may decline location or notification permission. Android permissions can be revoked in device settings, advertising choices can be changed in the app's privacy settings, and local data can be deleted through Android app settings or by uninstalling the app.</p>
+      <p>Users may decline location or notification permission. Disabling Lightning Watch removes the app's Firebase map-cell subscriptions. Android permissions can be revoked in device settings, advertising choices can be changed in the app's privacy settings, and local data can be deleted through Android app settings or by uninstalling the app. Retention and deletion of identifiers processed by Google and Firebase are governed by their own privacy policies.</p>
       <p>Privacy enquiries can be sent to <a href="mailto:aspbyte.dev@gmail.com">aspbyte.dev@gmail.com</a>. Requests concerning information processed by third parties may need to be directed to the relevant provider.</p>
 
       <h2>13. Changes</h2>

@@ -106,7 +106,7 @@
       <ol class="steps">
         <li><span>1</span><div><h3 data-i18n="stepOneTitle">Valitse paikka</h3><p data-i18n="stepOneText">Käytä hakua tai GPS:ää. Sijaintilupa on vapaaehtoinen.</p></div></li>
         <li><span>2</span><div><h3 data-i18n="stepTwoTitle">Määritä alue</h3><p data-i18n="stepTwoText">Valitse hälytyssäteeksi 3, 5, 10 tai 20 kilometriä.</p></div></li>
-        <li><span>3</span><div><h3 data-i18n="stepThreeTitle">Käynnistä salamavahti</h3><p data-i18n="stepThreeText">Salli ilmoitukset ja anna sovelluksen tarkistaa tallennettua aluetta.</p></div></li>
+        <li><span>3</span><div><h3 data-i18n="stepThreeTitle">Käynnistä salamavahti</h3><p data-i18n="stepThreeText">Salli ilmoitukset. Palvelin lähettää varoituksen, kun alueella havaitaan uusi salama.</p></div></li>
       </ol>
     </section>
 
@@ -141,14 +141,14 @@
           </ul>
         </article>
       </div>
-      <p class="fine-print" data-i18n="backgroundNote">Taustalla Android ajoittaa tarkistukset akun ja laitteen asetusten mukaan, tavallisesti noin 15 minuutin välein. Taustatoiminta ei ole reaaliaikainen.</p>
+      <p class="fine-print" data-i18n="backgroundNote">Salamavahti vastaanottaa palvelinvaroituksia myös taustalla. Androidin noin 15 minuutin tarkistus toimii varajärjestelmänä; ilmoitusten toimitusaikaa ei voida taata.</p>
     </section>
 
     <section class="section data-section" id="data">
       <div class="data-copy">
         <p class="kicker" data-i18n="dataKicker">Avoimet ja tunnetut tietolähteet</p>
         <h2 data-i18n="dataTitle">Salamahavainnot Ilmatieteen laitokselta</h2>
-        <p data-i18n="dataText">Sovellus hakee havaitut salamat Ilmatieteen laitoksen avoimesta WFS-palvelusta. Karttapohja on OpenStreetMapista. Havaintoja suodatetaan ajan, kartta-alueen ja valitsemasi säteen perusteella.</p>
+        <p data-i18n="dataText">Salamatutkan pilvipalvelu hakee Ilmatieteen laitoksen avoimen salamasyötteen kerran minuutissa ja jakaa viimeisten 15 minuutin havainnot sovelluksille. Suora FMI-haku toimii varajärjestelmänä, ja karttapohja on OpenStreetMapista.</p>
         <div class="source-links">
           <a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener" data-i18n="fmiLink">FMI Open Data ↗</a>
           <a href="https://www.openstreetmap.org/copyright" rel="noopener" data-i18n="osmLink">OpenStreetMap-lisenssi ↗</a>
@@ -160,12 +160,12 @@
     <section class="section privacy-section" id="privacy">
       <div>
         <p class="kicker" data-i18n="privacyKicker">Tietosuoja selkeästi</p>
-        <h2 data-i18n="privacyTitle">Ei käyttäjätiliä eikä AspByten omaa taustapalvelinta</h2>
+        <h2 data-i18n="privacyTitle">Ei käyttäjätiliä – tarkka hälytysalue säilyy puhelimessa</h2>
       </div>
       <div class="privacy-points">
-        <p data-i18n="privacyPointOne">Valittu paikka, säde ja salamavahdin asetukset tallennetaan laitteellesi.</p>
+        <p data-i18n="privacyPointOne">Tarkka paikka, säde ja salamavahdin asetukset tallennetaan laitteellesi eikä niitä tallenneta Salamatutkan palvelimelle.</p>
         <p data-i18n="privacyPointTwo">GPS on vapaaehtoinen eikä sovellus seuraa sijaintiasi taustalla.</p>
-        <p data-i18n="privacyPointThree">Ilmainen versio käyttää Google AdMobia. Mainosvalintoja hallitaan Googlen suostumusnäkymällä.</p>
+        <p data-i18n="privacyPointThree">Salamavahdin ollessa käytössä Firebase käsittelee ilmoitusten toimittamiseksi likimääräistä karttaruutualuetta. Tarkka etäisyystarkistus tehdään puhelimessa.</p>
         <a class="text-link" href="privacy-policy.html" data-i18n="readPrivacy">Lue koko tietosuojakäytäntö →</a>
       </div>
     </section>
