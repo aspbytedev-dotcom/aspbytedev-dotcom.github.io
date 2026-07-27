@@ -42,7 +42,7 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">Android-sovellus · suljettu testaus</span></p>
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">Android-sovellus · Google Play</span></p>
         <h1 data-i18n="heroTitle">Salamat lähelläsi, selkeästi kartalla.</h1>
         <p class="hero-lead" data-i18n="heroLead">Valitse paikka haulla tai GPS:llä, määritä 3–20 kilometrin hälytysalue ja käynnistä salamavahti.</p>
         <div class="hero-actions">
@@ -50,7 +50,7 @@
           <a class="button button-secondary" href="privacy-policy.html" data-i18n="privacyPolicy">Tietosuojakäytäntö</a>
         </div>
         <div class="hero-facts" aria-label="Sovelluksen perustiedot" data-i18n-aria="heroFactsLabel">
-          <span data-i18n="heroFactOne">Suomi · Ruotsi · Englanti</span>
+          <span data-i18n="heroFactOne">Useita kieliä · Google Play</span>
           <span data-i18n="heroFactTwo">FMI Open Data</span>
           <span data-i18n="heroFactThree">Ei käyttäjätiliä</span>
         </div>
@@ -94,7 +94,7 @@
         <article class="feature-card"><span class="feature-icon" aria-hidden="true">◉</span><h3 data-i18n="featureRadiusTitle">Sopiva hälytysalue</h3><p data-i18n="featureRadiusText">Valitse helposti 3, 5, 10 tai 20 kilometrin säde oman tarpeesi mukaan.</p></article>
         <article class="feature-card"><span class="feature-icon" aria-hidden="true">♢</span><h3 data-i18n="featureAlertTitle">Salamavahti ilmoittaa</h3><p data-i18n="featureAlertText">Android-ilmoitus kertoo, kun tallennetulla alueella havaitaan uusi salama.</p></article>
         <article class="feature-card"><span class="feature-icon" aria-hidden="true">◎</span><h3 data-i18n="featureFocusTitle">Palaa valittuun paikkaan</h3><p data-i18n="featureFocusText">Kartan kohdistuspainike palauttaa näkymän nopeasti tallennettuun hälytysalueeseen.</p></article>
-        <article class="feature-card"><span class="feature-icon" aria-hidden="true">文</span><h3 data-i18n="featureLanguageTitle">Kolme kieltä</h3><p data-i18n="featureLanguageText">Sovellus toimii suomeksi, ruotsiksi ja englanniksi valitun kieliasetuksen mukaan.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">文</span><h3 data-i18n="featureLanguageTitle">Laitteen kieli</h3><p data-i18n="featureLanguageText">Sovellus käyttää laitteen kieltä Google Playn tarjoamien käännösten mukaan.</p></article>
       </div>
     </section>
 
@@ -137,20 +137,22 @@
             <li data-i18n="proBenefitOne">Kaikki Free-version ominaisuudet</li>
             <li data-i18n="proBenefitTwo">Ei mainoksia</li>
             <li data-i18n="proBenefitThree">Lähes reaaliaikainen salamaseuranta sovelluksen ollessa auki</li>
-            <li data-i18n="proBenefitFour">Tilaus Google Playn kautta</li>
+            <li data-i18n="proBenefitFour">Pro-widget kotinäytölle</li>
+            <li data-i18n="proBenefitFive">Tilaus Google Playn kautta</li>
           </ul>
         </article>
       </div>
-      <p class="fine-print" data-i18n="backgroundNote">Taustalla Android ajoittaa tarkistukset akun ja laitteen asetusten mukaan, tavallisesti noin 15 minuutin välein. Taustatoiminta ei ole reaaliaikainen.</p>
+      <p class="fine-print" data-i18n="backgroundNote">Kun Salamavahti on käytössä, palvelin lähettää ilmoituksen suoraan valitun alueen uudesta salamasta. Androidin noin 15 minuutin tarkistus toimii varajärjestelmänä.</p>
     </section>
 
     <section class="section data-section" id="data">
       <div class="data-copy">
         <p class="kicker" data-i18n="dataKicker">Avoimet ja tunnetut tietolähteet</p>
         <h2 data-i18n="dataTitle">Salamahavainnot Ilmatieteen laitokselta</h2>
-        <p data-i18n="dataText">Sovellus hakee havaitut salamat Ilmatieteen laitoksen avoimesta WFS-palvelusta. Karttapohja on OpenStreetMapista. Havaintoja suodatetaan ajan, kartta-alueen ja valitsemasi säteen perusteella.</p>
+        <p data-i18n="dataText">AspByten Google Cloud -palvelu hakee FMI Open Datan yhteisen salamahavaintosyötteen ja jakaa sen sovelluksille. Kartta käyttää ensisijaisesti Google Mapsia; vanhemmissa kokoonpanoissa tai vararatkaisuna voidaan käyttää Leafletiä ja OpenStreetMapia.</p>
         <div class="source-links">
           <a href="https://en.ilmatieteenlaitos.fi/open-data" rel="noopener" data-i18n="fmiLink">FMI Open Data ↗</a>
+          <a href="https://policies.google.com/privacy" rel="noopener" data-i18n="googlePrivacyLink">Googlen tietosuoja ↗</a>
           <a href="https://www.openstreetmap.org/copyright" rel="noopener" data-i18n="osmLink">OpenStreetMap-lisenssi ↗</a>
         </div>
       </div>
@@ -160,11 +162,11 @@
     <section class="section privacy-section" id="privacy">
       <div>
         <p class="kicker" data-i18n="privacyKicker">Tietosuoja selkeästi</p>
-        <h2 data-i18n="privacyTitle">Ei käyttäjätiliä eikä AspByten omaa taustapalvelinta</h2>
+        <h2 data-i18n="privacyTitle">Ei käyttäjätiliä · palvelin käsittelee vain Salamavahdin tarvitsemat tiedot</h2>
       </div>
       <div class="privacy-points">
-        <p data-i18n="privacyPointOne">Valittu paikka, säde ja salamavahdin asetukset tallennetaan laitteellesi.</p>
-        <p data-i18n="privacyPointTwo">GPS on vapaaehtoinen eikä sovellus seuraa sijaintiasi taustalla.</p>
+        <p data-i18n="privacyPointOne">Valittu piste ja säde tallennetaan laitteelle. Salamavahdin ollessa käytössä tarkat koordinaatit, säde ja ilmoituksen toimitustunniste tallennetaan suojatusti palvelimelle.</p>
+        <p data-i18n="privacyPointTwo">GPS on vapaaehtoinen. Sovellus ei seuraa liikkeitäsi jatkuvasti eikä palvelin muodosta sijaintihistoriaa. Rekisteröinti poistetaan, kun Salamavahti pysäytetään, ja se vanhenee viimeistään 180 päivässä ilman päivitystä.</p>
         <p data-i18n="privacyPointThree">Ilmainen versio käyttää Google AdMobia. Mainosvalintoja hallitaan Googlen suostumusnäkymällä.</p>
         <a class="text-link" href="privacy-policy.html" data-i18n="readPrivacy">Lue koko tietosuojakäytäntö →</a>
       </div>
