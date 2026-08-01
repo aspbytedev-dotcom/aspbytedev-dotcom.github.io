@@ -1,13 +1,14 @@
 (() => {
   const translations = {
     fi: {
-      pageTitle: "Salamatutka – AspByte",
-      pageDescription: "Salamatutka näyttää tuoreet salamahavainnot kartalla ja ilmoittaa valitsemallasi alueella havaituista salamoista.",
+      pageTitle: "Salamatutka – salamat kartalla ja ukkoshälytykset | AspByte",
+      pageDescription: "Salamatutka näyttää tuoreet salamahavainnot kartalla ja lähettää ukkoshälytyksen valitsemallesi 3–20 km alueelle. Android-sovellus Google Playssa.",
+      policyPageDescription: "Salamatutka-sovelluksen tietosuojakäytäntö: sijainti, salamavahti, ilmoitukset, Google Maps, AdMob ja Google Play Billing.",
       skipLink: "Siirry sisältöön", brandName: "Salamatutka", mainNavLabel: "Päävalikko", languageLabel: "Kieli",
       navFeatures: "Ominaisuudet", navPlans: "Free ja Pro", navData: "Tietolähteet", navContact: "Yhteys",
       heroEyebrow: "Android-sovellus · Google Play", heroTitle: "Salamat lähelläsi, selkeästi kartalla.",
       heroLead: "Valitse paikka haulla tai GPS:llä, määritä 3–20 kilometrin hälytysalue ja käynnistä salamavahti.",
-      heroPrimary: "Tutustu ominaisuuksiin", privacyPolicy: "Tietosuojakäytäntö", heroFactsLabel: "Sovelluksen perustiedot",
+      heroPrimary: "Lataa Google Playsta", privacyPolicy: "Tietosuojakäytäntö", heroFactsLabel: "Sovelluksen perustiedot",
       heroFactOne: "Useita kieliä · Google Play", heroFactTwo: "FMI Open Data", heroFactThree: "Ei käyttäjätiliä",
       previewLabel: "Salamatutkan karttanäkymän havainnekuva", previewSubtitle: "Salamat kartalla", previewStatus: "Tuoreet salamahavainnot · 15 min",
       previewPlace: "Paikka: Helsinki · 10 km", previewWatch: "Salamavahti käytössä", settings: "Asetukset",
@@ -43,12 +44,12 @@
       policyPageTitle: "Salamatutkan tietosuojakäytäntö – AspByte", policyTitle: "Salamatutkan tietosuojakäytäntö", policyUpdated: "Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 1.8.2026", backHome: "← Takaisin Salamatutkan etusivulle"
     },
     sv: {
-      pageTitle: "Blixtradar – AspByte", pageDescription: "Blixtradar visar färska blixtobservationer på kartan och meddelar om blixtar i det valda området.",
+      pageTitle: "Blixtradar – blixtar på kartan och varningar | AspByte", pageDescription: "Blixtradar visar aktuella blixtobservationer på kartan och varnar om blixtar inom ditt valda område.", policyPageDescription: "Blixtradars integritetspolicy: plats, aviseringar, Google Maps, AdMob och Google Play Billing.",
       skipLink: "Gå till innehållet", brandName: "Blixtradar", mainNavLabel: "Huvudmeny", languageLabel: "Språk",
       navFeatures: "Funktioner", navPlans: "Gratis och Pro", navData: "Datakällor", navContact: "Kontakt",
       heroEyebrow: "Android-app · Google Play", heroTitle: "Blixtar nära dig, tydligt på kartan.",
       heroLead: "Välj en plats med sökning eller GPS, ange ett varningsområde på 3–20 kilometer och starta blixtvakten.",
-      heroPrimary: "Se funktionerna", privacyPolicy: "Integritetspolicy", heroFactsLabel: "Grundläggande appinformation",
+      heroPrimary: "Hämta på Google Play", privacyPolicy: "Integritetspolicy", heroFactsLabel: "Grundläggande appinformation",
       heroFactOne: "Flera språk · Google Play", heroFactTwo: "FMI Open Data", heroFactThree: "Inget användarkonto",
       previewLabel: "Illustration av Blixtradars kartvy", previewSubtitle: "Blixtar på kartan", previewStatus: "Färska blixtobservationer · 15 min",
       previewPlace: "Plats: Helsingfors · 10 km", previewWatch: "Blixtvakten är aktiv", settings: "Inställningar",
@@ -82,12 +83,12 @@
       policyPageTitle: "Blixtradars integritetspolicy – AspByte", policyTitle: "Blixtradars integritetspolicy", policyUpdated: "Gäller från 13.7.2026 · Senast uppdaterad 1.8.2026", backHome: "← Tillbaka till Blixtradars startsida"
     },
     en: {
-      pageTitle: "Lightning Radar – AspByte", pageDescription: "Lightning Radar shows recent lightning observations on the map and alerts you to lightning in your selected area.",
+      pageTitle: "Lightning Radar – map and lightning alerts | AspByte", pageDescription: "Lightning Radar shows recent lightning observations on the map and alerts you to lightning in your selected area.", policyPageDescription: "Lightning Radar privacy policy: location, alerts, Google Maps, AdMob and Google Play Billing.",
       skipLink: "Skip to content", brandName: "Lightning Radar", mainNavLabel: "Main navigation", languageLabel: "Language",
       navFeatures: "Features", navPlans: "Free and Pro", navData: "Data sources", navContact: "Contact",
       heroEyebrow: "Android app · Google Play", heroTitle: "Nearby lightning, clearly shown on the map.",
       heroLead: "Choose a place by search or GPS, set a 3–20 kilometre alert area, and start Lightning Watch.",
-      heroPrimary: "Explore features", privacyPolicy: "Privacy policy", heroFactsLabel: "Basic app information",
+      heroPrimary: "Get it on Google Play", privacyPolicy: "Privacy policy", heroFactsLabel: "Basic app information",
       heroFactOne: "Multiple languages · Google Play", heroFactTwo: "FMI Open Data", heroFactThree: "No user account",
       previewLabel: "Illustration of the Lightning Radar map view", previewSubtitle: "Lightning on the map", previewStatus: "Recent lightning observations · 15 min",
       previewPlace: "Place: Helsinki · 10 km", previewWatch: "Lightning Watch is active", settings: "Settings",
@@ -155,9 +156,21 @@
     });
 
     const isPolicy = document.body.dataset.page === "privacy";
-    document.title = isPolicy ? dictionary.policyPageTitle : dictionary.pageTitle;
+    const pageTitle = isPolicy ? dictionary.policyPageTitle : dictionary.pageTitle;
+    const pageDescription = isPolicy ? dictionary.policyPageDescription : dictionary.pageDescription;
+    document.title = pageTitle;
     const description = document.querySelector('meta[name="description"]');
-    if (description && !isPolicy) description.setAttribute("content", dictionary.pageDescription);
+    if (description) description.setAttribute("content", pageDescription);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogTitle) ogTitle.setAttribute("content", pageTitle);
+    if (ogDescription) ogDescription.setAttribute("content", pageDescription);
+    if (twitterTitle) twitterTitle.setAttribute("content", pageTitle);
+    if (twitterDescription) twitterDescription.setAttribute("content", pageDescription);
+    if (ogLocale) ogLocale.setAttribute("content", { fi: "fi_FI", sv: "sv_SE", en: "en_US" }[lang]);
     try { localStorage.setItem("aspbyte-language", lang); } catch (_) {}
   };
 

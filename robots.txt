@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aspbytedev-dotcom.github.io/sitemap.xml
