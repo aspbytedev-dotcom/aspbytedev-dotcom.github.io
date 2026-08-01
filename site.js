@@ -1,4 +1,10 @@
 (() => {
+  const playUrls = {
+    fi: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi",
+    sv: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=sv",
+    en: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=en"
+  };
+
   const translations = {
     fi: {
       pageTitle: "Salamatutka – salamat kartalla ja ukkoshälytykset | AspByte",
@@ -171,6 +177,9 @@
     if (twitterTitle) twitterTitle.setAttribute("content", pageTitle);
     if (twitterDescription) twitterDescription.setAttribute("content", pageDescription);
     if (ogLocale) ogLocale.setAttribute("content", { fi: "fi_FI", sv: "sv_SE", en: "en_US" }[lang]);
+    document.querySelectorAll("[data-play-link]").forEach((link) => {
+      link.setAttribute("href", playUrls[lang]);
+    });
     try { localStorage.setItem("aspbyte-language", lang); } catch (_) {}
   };
 
