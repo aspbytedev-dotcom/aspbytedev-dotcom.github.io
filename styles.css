@@ -228,6 +228,7 @@ p { color: var(--muted); }
 .plan-card ul { display: grid; gap: 12px; margin: 28px 0 0; padding: 0; list-style: none; }
 .plan-card li { position: relative; padding-left: 27px; color: var(--muted); }
 .plan-card li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
+.plan-card .button { margin-top: 28px; }
 .fine-print { max-width: 900px; margin: 20px 0 0; font-size: .82rem; }
 
 .data-section, .privacy-section, .contact-section { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(40px, 8vw, 100px); align-items: center; }

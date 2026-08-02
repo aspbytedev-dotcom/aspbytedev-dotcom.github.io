@@ -1,13 +1,20 @@
 (() => {
+  const playUrls = {
+    fi: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi",
+    sv: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=sv",
+    en: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=en"
+  };
+
   const translations = {
     fi: {
-      pageTitle: "Salamatutka – AspByte",
-      pageDescription: "Salamatutka näyttää tuoreet salamahavainnot kartalla ja ilmoittaa valitsemallasi alueella havaituista salamoista.",
+      pageTitle: "Salamatutka – salamat kartalla ja ukkoshälytykset | AspByte",
+      pageDescription: "Salamatutka näyttää tuoreet salamahavainnot kartalla ja lähettää ukkoshälytyksen valitsemallesi 3–20 km alueelle. Android-sovellus Google Playssa.",
+      policyPageDescription: "Salamatutka-sovelluksen tietosuojakäytäntö: sijainti, salamavahti, ilmoitukset, Google Maps, AdMob ja Google Play Billing.",
       skipLink: "Siirry sisältöön", brandName: "Salamatutka", mainNavLabel: "Päävalikko", languageLabel: "Kieli",
-      navFeatures: "Ominaisuudet", navPlans: "Free ja Pro", navData: "Tietolähteet", navContact: "Yhteys",
+      navFeatures: "Ominaisuudet", navPlans: "Free ja Pro", navData: "Tietolähteet", navContact: "Yhteys", navPlay: "Google Play",
       heroEyebrow: "Android-sovellus · Google Play", heroTitle: "Salamat lähelläsi, selkeästi kartalla.",
       heroLead: "Valitse paikka haulla tai GPS:llä, määritä 3–20 kilometrin hälytysalue ja käynnistä salamavahti.",
-      heroPrimary: "Tutustu ominaisuuksiin", privacyPolicy: "Tietosuojakäytäntö", heroFactsLabel: "Sovelluksen perustiedot",
+      heroPrimary: "Lataa Google Playsta", privacyPolicy: "Tietosuojakäytäntö", heroFactsLabel: "Sovelluksen perustiedot",
       heroFactOne: "Useita kieliä · Google Play", heroFactTwo: "FMI Open Data", heroFactThree: "Ei käyttäjätiliä",
       previewLabel: "Salamatutkan karttanäkymän havainnekuva", previewSubtitle: "Salamat kartalla", previewStatus: "Tuoreet salamahavainnot · 15 min",
       previewPlace: "Paikka: Helsinki · 10 km", previewWatch: "Salamavahti käytössä", settings: "Asetukset",
@@ -25,11 +32,11 @@
       plansKicker: "Valitse sinulle sopiva tapa", plansTitle: "Free tai Salamatutka Pro",
       plansLead: "Molemmissa versioissa ovat kartta, paikan valinta ja salamavahti. Pro tekee käytöstä mainoksettoman ja nopeamman sovelluksen ollessa auki.",
       freeName: "Salamatutka Free", freePrice: "0 €", freePricePeriod: " aina", freeBenefitOne: "Salamat kartalla ja hälytysalue",
-      freeBenefitTwo: "Salamavahti ja Android-ilmoitukset", freeBenefitThree: "Mainos sovelluksen alareunassa", freeBenefitFour: "Aktiivinen tarkistus noin minuutin välein",
+      freeBenefitTwo: "Salamavahti ja Android-ilmoitukset", freeBenefitThree: "Mainos sovelluksen alareunassa", freeBenefitFour: "Aktiivinen tarkistus noin minuutin välein", freeCta: "Lataa ilmaiseksi",
       recommended: "Pro", proName: "Salamatutka Pro", monthlyPrice: "1,19 €", yearlyPrice: "12,99 €", perMonth: " / kk", or: "tai", perYear: " / vuosi",
       trial: "Vuositilauksessa 1 kuukausi maksutta uusille tilaajille", proBenefitOne: "Kaikki Free-version ominaisuudet", proBenefitTwo: "Ei mainoksia",
       taxNote: "Hinnat vaihtelevat maittain. Google Play näyttää lopullisen paikallisen hinnan ja verot ennen ostoa.",
-      proBenefitThree: "Lähes reaaliaikainen salamaseuranta sovelluksen ollessa auki", proBenefitFour: "Pro-widget kotinäytölle", proBenefitFive: "Tilaus Google Playn kautta",
+      proBenefitThree: "Lähes reaaliaikainen salamaseuranta sovelluksen ollessa auki", proBenefitFour: "Pro-widget kotinäytölle", proBenefitFive: "Tilaus Google Playn kautta", proCta: "Avaa Google Playssa",
       backgroundNote: "Kun Salamavahti on käytössä, palvelin lähettää ilmoituksen suoraan valitun alueen uudesta salamasta. Ilmoituksia rajoitetaan enintään yhteen tunnissa, ja käyttäjä voi hiljentää ne kolmeksi tunniksi. Androidin noin 15 minuutin tarkistus toimii varajärjestelmänä; toimitusaikaa ei voida taata.",
       dataKicker: "Avoimet ja tunnetut tietolähteet", dataTitle: "Salamahavainnot Ilmatieteen laitokselta",
       dataText: "AspByten Google Cloud -palvelu hakee FMI Open Datan yhteisen salamahavaintosyötteen normaalisti kerran minuutissa ja tekee uuden toimitettavan salaman jälkeen tarvittaessa yhden lisähaun noin 30 sekunnin kuluttua. Kartta käyttää ensisijaisesti Google Mapsia; Leaflet ja OpenStreetMap toimivat vararatkaisuna.",
@@ -39,16 +46,16 @@
       privacyPointTwo: "GPS on vapaaehtoinen. Sovellus ei seuraa liikkeitäsi jatkuvasti eikä palvelin muodosta sijaintihistoriaa. Rekisteröinti poistetaan, kun Salamavahti pysäytetään, ja se vanhenee viimeistään 180 päivässä ilman päivitystä.",
       privacyPointThree: "Ilmainen versio käyttää Google AdMobia. Mainosvalintoja hallitaan Googlen suostumusnäkymällä.", readPrivacy: "Lue koko tietosuojakäytäntö →",
       safetyTitle: "Turvallisuushuomautus", safetyText: "Salamatutka ei ole virallinen vaaravaroitus- tai turvallisuuspalvelu. Havainnoissa ja päivityksissä voi olla viivettä. Noudata aina viranomaisten sää- ja vaaratiedotteita.",
-      contactKicker: "AspByte", contactTitle: "Kysyttävää Salamatutkasta?", contactText: "Palautteet, virheilmoitukset ja yhteistyöehdotukset voi lähettää sähköpostitse.", footerMade: "Tehty Suomessa",
+      contactKicker: "AspByte", contactTitle: "Kysyttävää Salamatutkasta?", contactText: "Palautteet, virheilmoitukset ja yhteistyöehdotukset voi lähettää sähköpostitse.", footerMade: "Tehty Suomessa", footerPlay: "Lataa Google Playsta",
       policyPageTitle: "Salamatutkan tietosuojakäytäntö – AspByte", policyTitle: "Salamatutkan tietosuojakäytäntö", policyUpdated: "Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 1.8.2026", backHome: "← Takaisin Salamatutkan etusivulle"
     },
     sv: {
-      pageTitle: "Blixtradar – AspByte", pageDescription: "Blixtradar visar färska blixtobservationer på kartan och meddelar om blixtar i det valda området.",
+      pageTitle: "Blixtradar – blixtar på kartan och varningar | AspByte", pageDescription: "Blixtradar visar aktuella blixtobservationer på kartan och varnar om blixtar inom ditt valda område.", policyPageDescription: "Blixtradars integritetspolicy: plats, aviseringar, Google Maps, AdMob och Google Play Billing.",
       skipLink: "Gå till innehållet", brandName: "Blixtradar", mainNavLabel: "Huvudmeny", languageLabel: "Språk",
-      navFeatures: "Funktioner", navPlans: "Gratis och Pro", navData: "Datakällor", navContact: "Kontakt",
+      navFeatures: "Funktioner", navPlans: "Gratis och Pro", navData: "Datakällor", navContact: "Kontakt", navPlay: "Google Play",
       heroEyebrow: "Android-app · Google Play", heroTitle: "Blixtar nära dig, tydligt på kartan.",
       heroLead: "Välj en plats med sökning eller GPS, ange ett varningsområde på 3–20 kilometer och starta blixtvakten.",
-      heroPrimary: "Se funktionerna", privacyPolicy: "Integritetspolicy", heroFactsLabel: "Grundläggande appinformation",
+      heroPrimary: "Hämta på Google Play", privacyPolicy: "Integritetspolicy", heroFactsLabel: "Grundläggande appinformation",
       heroFactOne: "Flera språk · Google Play", heroFactTwo: "FMI Open Data", heroFactThree: "Inget användarkonto",
       previewLabel: "Illustration av Blixtradars kartvy", previewSubtitle: "Blixtar på kartan", previewStatus: "Färska blixtobservationer · 15 min",
       previewPlace: "Plats: Helsingfors · 10 km", previewWatch: "Blixtvakten är aktiv", settings: "Inställningar",
@@ -65,11 +72,11 @@
       plansKicker: "Välj det som passar dig", plansTitle: "Gratis eller Blixtradar Pro",
       plansLead: "Båda versionerna har karta, platsval och blixtvakt. Pro är annonsfri och snabbare när appen är öppen.",
       freeName: "Blixtradar Gratis", freePrice: "0 €", freePricePeriod: " alltid", freeBenefitOne: "Blixtar på kartan och varningsområde",
-      freeBenefitTwo: "Blixtvakt och Android-aviseringar", freeBenefitThree: "Annons längst ned i appen", freeBenefitFour: "Aktiv kontroll ungefär varje minut",
+      freeBenefitTwo: "Blixtvakt och Android-aviseringar", freeBenefitThree: "Annons längst ned i appen", freeBenefitFour: "Aktiv kontroll ungefär varje minut", freeCta: "Hämta gratis",
       recommended: "Pro", proName: "Blixtradar Pro", monthlyPrice: "14 kr", yearlyPrice: "139 kr", perMonth: " / mån", or: "eller", perYear: " / år",
       trial: "1 månad gratis för nya årsprenumeranter", proBenefitOne: "Alla funktioner i gratisversionen", proBenefitTwo: "Inga annonser",
       taxNote: "Priserna varierar mellan länder. Google Play visar det slutliga lokala priset och skatterna före köpet.",
-      proBenefitThree: "Nästan realtidsbaserad blixtövervakning när appen är öppen", proBenefitFour: "Pro-widget på startskärmen", proBenefitFive: "Prenumeration via Google Play",
+      proBenefitThree: "Nästan realtidsbaserad blixtövervakning när appen är öppen", proBenefitFour: "Pro-widget på startskärmen", proBenefitFive: "Prenumeration via Google Play", proCta: "Öppna i Google Play",
       backgroundNote: "När Blixtvakten är aktiv skickar servern en direkt avisering om nya blixtar i det valda området. Aviseringar begränsas till högst en per timme, och användaren kan pausa dem i tre timmar. Androids kontroll ungefär var 15:e minut fungerar som reserv; leveranstiden kan inte garanteras.",
       dataKicker: "Öppna och välkända datakällor", dataTitle: "Blixtobservationer från Meteorologiska institutet",
       dataText: "AspBytes Google Cloud-tjänst hämtar det gemensamma blixtflödet från FMI Open Data normalt en gång per minut och gör vid behov en extra hämtning cirka 30 sekunder efter en ny levererbar blixt. Kartan använder främst Google Maps; Leaflet och OpenStreetMap fungerar som reserv.",
@@ -78,16 +85,16 @@
       privacyPointOne: "Den valda punkten och radien sparas på enheten. När Blixtvakten är aktiv lagras exakta koordinater, radie och aviseringsidentifierare säkert på servern.", privacyPointTwo: "GPS är valfritt. Appen följer inte dina rörelser kontinuerligt och servern skapar ingen platshistorik. Registreringen raderas när Blixtvakten stoppas och upphör senast efter 180 dagar utan uppdatering.",
       privacyPointThree: "Gratisversionen använder Google AdMob. Annonsval hanteras i Googles samtyckesvy.", readPrivacy: "Läs hela integritetspolicyn →",
       safetyTitle: "Säkerhetsinformation", safetyText: "Blixtradar är inte en officiell varnings- eller säkerhetstjänst. Observationer och uppdateringar kan vara fördröjda. Följ alltid myndigheternas väder- och faromeddelanden.",
-      contactKicker: "AspByte", contactTitle: "Frågor om Blixtradar?", contactText: "Feedback, felrapporter och samarbetsförslag kan skickas via e-post.", footerMade: "Skapad i Finland",
+      contactKicker: "AspByte", contactTitle: "Frågor om Blixtradar?", contactText: "Feedback, felrapporter och samarbetsförslag kan skickas via e-post.", footerMade: "Skapad i Finland", footerPlay: "Hämta på Google Play",
       policyPageTitle: "Blixtradars integritetspolicy – AspByte", policyTitle: "Blixtradars integritetspolicy", policyUpdated: "Gäller från 13.7.2026 · Senast uppdaterad 1.8.2026", backHome: "← Tillbaka till Blixtradars startsida"
     },
     en: {
-      pageTitle: "Lightning Radar – AspByte", pageDescription: "Lightning Radar shows recent lightning observations on the map and alerts you to lightning in your selected area.",
+      pageTitle: "Lightning Radar – map and lightning alerts | AspByte", pageDescription: "Lightning Radar shows recent lightning observations on the map and alerts you to lightning in your selected area.", policyPageDescription: "Lightning Radar privacy policy: location, alerts, Google Maps, AdMob and Google Play Billing.",
       skipLink: "Skip to content", brandName: "Lightning Radar", mainNavLabel: "Main navigation", languageLabel: "Language",
-      navFeatures: "Features", navPlans: "Free and Pro", navData: "Data sources", navContact: "Contact",
+      navFeatures: "Features", navPlans: "Free and Pro", navData: "Data sources", navContact: "Contact", navPlay: "Google Play",
       heroEyebrow: "Android app · Google Play", heroTitle: "Nearby lightning, clearly shown on the map.",
       heroLead: "Choose a place by search or GPS, set a 3–20 kilometre alert area, and start Lightning Watch.",
-      heroPrimary: "Explore features", privacyPolicy: "Privacy policy", heroFactsLabel: "Basic app information",
+      heroPrimary: "Get it on Google Play", privacyPolicy: "Privacy policy", heroFactsLabel: "Basic app information",
       heroFactOne: "Multiple languages · Google Play", heroFactTwo: "FMI Open Data", heroFactThree: "No user account",
       previewLabel: "Illustration of the Lightning Radar map view", previewSubtitle: "Lightning on the map", previewStatus: "Recent lightning observations · 15 min",
       previewPlace: "Place: Helsinki · 10 km", previewWatch: "Lightning Watch is active", settings: "Settings",
@@ -104,11 +111,11 @@
       plansKicker: "Choose what suits you", plansTitle: "Free or Lightning Radar Pro",
       plansLead: "Both versions include the map, place selection, and Lightning Watch. Pro is ad-free and faster while the app is open.",
       freeName: "Lightning Radar Free", freePrice: "€0", freePricePeriod: " forever", freeBenefitOne: "Lightning map and alert area",
-      freeBenefitTwo: "Lightning Watch and Android notifications", freeBenefitThree: "An ad at the bottom of the app", freeBenefitFour: "Active checks about once a minute",
+      freeBenefitTwo: "Lightning Watch and Android notifications", freeBenefitThree: "An ad at the bottom of the app", freeBenefitFour: "Active checks about once a minute", freeCta: "Download free",
       recommended: "Pro", proName: "Lightning Radar Pro", monthlyPrice: "from €1.19", yearlyPrice: "from €11.99", perMonth: " / month", or: "or", perYear: " / year",
       trial: "1 month free for new annual subscribers", proBenefitOne: "Everything in the Free version", proBenefitTwo: "No ads",
       taxNote: "Prices vary by country. Google Play shows the final local price and taxes before purchase.",
-      proBenefitThree: "Near-real-time lightning monitoring while the app is open", proBenefitFour: "Pro home-screen widget", proBenefitFive: "Subscription through Google Play",
+      proBenefitThree: "Near-real-time lightning monitoring while the app is open", proBenefitFour: "Pro home-screen widget", proBenefitFive: "Subscription through Google Play", proCta: "Open in Google Play",
       backgroundNote: "When Lightning Watch is active, the server sends a direct alert for new lightning in the selected area. Alerts are limited to at most one per hour, and the user can mute them for three hours. Android’s approximately 15-minute check acts as a fallback; delivery time cannot be guaranteed.",
       dataKicker: "Open and established data sources", dataTitle: "Lightning observations from the Finnish Meteorological Institute",
       dataText: "AspByte's Google Cloud service normally retrieves the shared lightning feed from FMI Open Data once per minute and, when needed, makes one extra request about 30 seconds after a new deliverable strike. The map primarily uses Google Maps; Leaflet and OpenStreetMap act as a fallback.",
@@ -117,7 +124,7 @@
       privacyPointOne: "The selected point and radius are stored on the device. While Lightning Watch is active, exact coordinates, radius and a notification delivery identifier are securely stored on the server.", privacyPointTwo: "GPS is optional. The app does not continuously track your movements, and the server does not build location history. Registration is deleted when Lightning Watch is stopped and expires within 180 days without an update.",
       privacyPointThree: "The Free version uses Google AdMob. Ad choices are managed through Google's consent interface.", readPrivacy: "Read the full privacy policy →",
       safetyTitle: "Safety notice", safetyText: "Lightning Radar is not an official hazard warning or safety service. Observations and updates may be delayed. Always follow official weather and hazard warnings.",
-      contactKicker: "AspByte", contactTitle: "Questions about Lightning Radar?", contactText: "Feedback, bug reports, and partnership enquiries are welcome by email.", footerMade: "Made in Finland",
+      contactKicker: "AspByte", contactTitle: "Questions about Lightning Radar?", contactText: "Feedback, bug reports, and partnership enquiries are welcome by email.", footerMade: "Made in Finland", footerPlay: "Get it on Google Play",
       policyPageTitle: "Lightning Radar Privacy Policy – AspByte", policyTitle: "Lightning Radar Privacy Policy", policyUpdated: "Effective 13 July 2026 · Last updated 1 August 2026", backHome: "← Back to the Lightning Radar home page"
     }
   };
@@ -155,9 +162,24 @@
     });
 
     const isPolicy = document.body.dataset.page === "privacy";
-    document.title = isPolicy ? dictionary.policyPageTitle : dictionary.pageTitle;
+    const pageTitle = isPolicy ? dictionary.policyPageTitle : dictionary.pageTitle;
+    const pageDescription = isPolicy ? dictionary.policyPageDescription : dictionary.pageDescription;
+    document.title = pageTitle;
     const description = document.querySelector('meta[name="description"]');
-    if (description && !isPolicy) description.setAttribute("content", dictionary.pageDescription);
+    if (description) description.setAttribute("content", pageDescription);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogTitle) ogTitle.setAttribute("content", pageTitle);
+    if (ogDescription) ogDescription.setAttribute("content", pageDescription);
+    if (twitterTitle) twitterTitle.setAttribute("content", pageTitle);
+    if (twitterDescription) twitterDescription.setAttribute("content", pageDescription);
+    if (ogLocale) ogLocale.setAttribute("content", { fi: "fi_FI", sv: "sv_SE", en: "en_US" }[lang]);
+    document.querySelectorAll("[data-play-link]").forEach((link) => {
+      link.setAttribute("href", playUrls[lang]);
+    });
     try { localStorage.setItem("aspbyte-language", lang); } catch (_) {}
   };
 
