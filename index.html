@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1220">
-  <meta name="description" content="Salamatutka näyttää tuoreet salamahavainnot kartalla ja lähettää ukkoshälytyksen valitsemallesi 3–20 km alueelle. Android-sovellus Google Playssa.">
+  <meta name="description" content="Salamatutka näyttää tuoreet salamahavainnot, salamatiheyskartan ja ukkosalueen arvioidun liikesuunnan sekä lähettää hälytyksen valitsemallesi 3–20 km alueelle.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="AspByte">
   <link rel="canonical" href="https://aspbytedev-dotcom.github.io/">
@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="AspByte">
   <meta property="og:locale" content="fi_FI">
   <meta property="og:title" content="Salamatutka – salamat kartalla ja ukkoshälytykset">
-  <meta property="og:description" content="Seuraa tuoreita salamahavaintoja ja saat ilmoituksen, kun valitulla alueella havaitaan uusi salama.">
+  <meta property="og:description" content="Seuraa tuoreita salamahavaintoja, salamatiheyttä ja ukkosalueen arvioitua liikesuuntaa sekä saat ilmoituksen valitulta alueelta.">
   <meta property="og:url" content="https://aspbytedev-dotcom.github.io/">
   <meta property="og:image" content="https://aspbytedev-dotcom.github.io/og-salamatutka.png">
   <meta property="og:image:width" content="1024">
@@ -20,7 +20,7 @@
   <meta property="og:image:alt" content="Salamatutka – salamat kartalla ja hälytys omalta alueeltasi">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Salamatutka – salamat kartalla ja ukkoshälytykset">
-  <meta name="twitter:description" content="Seuraa tuoreita salamahavaintoja ja saat ilmoituksen valitsemaltasi alueelta.">
+  <meta name="twitter:description" content="Seuraa tuoreita salamahavaintoja, salamatiheyttä ja ukkosalueen arvioitua liikesuuntaa.">
   <meta name="twitter:image" content="https://aspbytedev-dotcom.github.io/og-salamatutka.png">
   <title>Salamatutka – salamat kartalla ja ukkoshälytykset | AspByte</title>
   <link rel="icon" type="image/png" href="icon-512.png">
@@ -35,12 +35,19 @@
     "alternateName": ["Lightning Radar", "Blixtradar"],
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Android",
-    "description": "Salamatutka näyttää tuoreet salamahavainnot kartalla ja lähettää ukkoshälytyksen valitsemallesi alueelle.",
+    "description": "Salamatutka näyttää tuoreet salamahavainnot, salamatiheyskartan ja ukkosalueen arvioidun liikesuunnan sekä lähettää ukkoshälytyksen valitsemallesi alueelle.",
     "url": "https://aspbytedev-dotcom.github.io/",
     "downloadUrl": "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi",
     "sameAs": "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi",
     "image": "https://aspbytedev-dotcom.github.io/og-salamatutka.png",
     "inLanguage": ["fi", "sv", "en"],
+    "featureList": [
+      "Tuoreet salamahavainnot kartalla",
+      "Salamatiheyskartta",
+      "Ukkosalueen arvioitu liikesuunta",
+      "3–20 kilometrin hälytysalue",
+      "Palvelimen toimittamat salamahälytykset"
+    ],
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -116,6 +123,8 @@
             <span class="alert-radius"></span><span class="selected-pin"></span>
             <span class="strike strike-new strike-a"></span><span class="strike strike-new strike-b"></span>
             <span class="strike strike-old strike-c"></span><span class="strike strike-old strike-d"></span>
+            <span class="heat-spot heat-spot-a"></span><span class="heat-spot heat-spot-b"></span>
+            <span class="motion-arrow"></span>
             <span class="pulse-ring"></span>
             <div class="map-controls"><span>+</span><span>−</span><span>◎</span></div>
             <div class="map-status" data-i18n="previewStatus">Tuoreet salamahavainnot · 15 min</div>
@@ -132,7 +141,7 @@
       <div class="section-heading">
         <p class="kicker" data-i18n="featuresKicker">Suunniteltu nopeaan käyttöön</p>
         <h2 data-i18n="featuresTitle">Oleellinen näkyy yhdellä silmäyksellä</h2>
-        <p data-i18n="featuresLead">Salamatutka keskittyy yhteen asiaan: missä tuoreimmat salamat on havaittu ja osuuko havainto valitsemallesi alueelle.</p>
+        <p data-i18n="featuresLead">Näet tuoreimmat salamahavainnot, niiden keskittymät ja ukkosalueen arvioidun liikesuunnan sekä sen, osuuko havainto valitsemallesi alueelle.</p>
       </div>
       <div class="feature-grid">
         <article class="feature-card"><span class="feature-icon" aria-hidden="true">⌖</span><h3 data-i18n="featureMapTitle">Tuoreet salamat kartalla</h3><p data-i18n="featureMapText">Kartalla näkyvät enintään 15 minuuttia vanhat havainnot. Uusimmat iskut erottuvat selkeimmin.</p></article>
@@ -141,6 +150,8 @@
         <article class="feature-card"><span class="feature-icon" aria-hidden="true">♢</span><h3 data-i18n="featureAlertTitle">Salamavahti ilmoittaa</h3><p data-i18n="featureAlertText">Android-ilmoitus kertoo, kun tallennetulla alueella havaitaan uusi salama.</p></article>
         <article class="feature-card"><span class="feature-icon" aria-hidden="true">◎</span><h3 data-i18n="featureFocusTitle">Palaa valittuun paikkaan</h3><p data-i18n="featureFocusText">Kartan kohdistuspainike palauttaa näkymän nopeasti tallennettuun hälytysalueeseen.</p></article>
         <article class="feature-card"><span class="feature-icon" aria-hidden="true">文</span><h3 data-i18n="featureLanguageTitle">Laitteen kieli</h3><p data-i18n="featureLanguageText">Sovellus käyttää laitteen kieltä Google Playn tarjoamien käännösten mukaan.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">◌</span><h3 data-i18n="featureHeatTitle">Salamatiheyskartta</h3><p data-i18n="featureHeatText">Tiheyskartta näyttää yhdellä silmäyksellä alueet, joille viimeaikaiset salamahavainnot keskittyvät.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">➜</span><h3 data-i18n="featureMotionTitle">Arvioitu liikesuunta</h3><p data-i18n="featureMotionText">Selkeä nuoli arvioi ukkosalueen liikesuuntaa viimeaikaisten havaintojen perusteella, kun havaintoja on riittävästi. Kyse ei ole sääennusteesta.</p></article>
       </div>
     </section>
 

@@ -7,6 +7,7 @@ Sivusto sisältää:
 - suomen-, ruotsin- ja englanninkielisen tuote-esittelyn
 - Free- ja Pro-versioiden ominaisuudet ja hinnat
 - sovelluksen tietolähteet ja turvallisuushuomautuksen
+- salamatiheyskartan ja ukkosalueen arvioidun liikesuunnan esittelyn
 - kolmikielisen tietosuojakäytännön
 - AdMobin vaatiman `app-ads.txt`-tiedoston
 

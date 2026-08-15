@@ -183,6 +183,11 @@ p { color: var(--muted); }
 .strike-new { background: var(--red); color: var(--red); }
 .strike-old { background: var(--orange); color: var(--orange); opacity: .72; }
 .strike-a { left: 120px; top: 165px; }.strike-b { right: 74px; top: 104px; }.strike-c { left: 68px; bottom: 92px; }.strike-d { right: 48px; bottom: 146px; }
+.heat-spot { position: absolute; z-index: 2; border-radius: 50%; pointer-events: none; filter: blur(2px); background: radial-gradient(circle, rgba(255,77,71,.65) 0 13%, rgba(255,174,46,.42) 30%, rgba(255,212,75,.16) 55%, transparent 72%); }
+.heat-spot-a { width: 100px; height: 100px; left: 78px; top: 122px; }
+.heat-spot-b { width: 78px; height: 78px; right: 43px; top: 70px; opacity: .75; }
+.motion-arrow { position: absolute; z-index: 4; width: 76px; height: 7px; left: 146px; top: 126px; border: 2px solid rgba(8,14,25,.85); border-radius: 999px; background: #ffd64b; box-shadow: 0 0 10px rgba(255,214,75,.45); transform: rotate(-24deg); transform-origin: left center; }
+.motion-arrow::after { content: ""; position: absolute; right: -11px; top: 50%; width: 18px; height: 18px; border-top: 7px solid #ffd64b; border-right: 7px solid #ffd64b; filter: drop-shadow(2px -2px 0 rgba(8,14,25,.85)); transform: translateY(-50%) rotate(45deg); }
 .pulse-ring { position: absolute; left: 105px; top: 150px; width: 38px; height: 38px; border: 2px solid rgba(255,77,71,.65); border-radius: 50%; animation: pulse 2s ease-out infinite; }
 .map-controls { position: absolute; z-index: 4; top: 13px; left: 12px; display: grid; overflow: hidden; border-radius: 7px; box-shadow: 0 3px 10px rgba(0,0,0,.3); }
 .map-controls span { display: grid; place-items: center; width: 31px; height: 31px; border-bottom: 1px solid #d8dce1; background: #fff; color: #253141; font-weight: 800; }
