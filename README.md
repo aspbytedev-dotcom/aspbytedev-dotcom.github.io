@@ -4,11 +4,11 @@ AspByten julkinen GitHub Pages -sivusto Salamatutka-sovellukselle.
 
 Sivusto sisältää:
 
-- suomen-, ruotsin- ja englanninkielisen tuote-esittelyn
+- kahdeksankielisen tuote-esittelyn (FI, SV, EN, NO, DA, ET, LV ja LT)
 - Free- ja Pro-versioiden ominaisuudet ja hinnat
 - sovelluksen tietolähteet ja turvallisuushuomautuksen
 - salamatiheyskartan ja ukkosalueen arvioidun liikesuunnan esittelyn
-- kolmikielisen tietosuojakäytännön
+- kahdeksankielisen tietosuojakäytännön
 - AdMobin vaatiman `app-ads.txt`-tiedoston
 
 Tavoiteosoitteet:

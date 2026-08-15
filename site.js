@@ -2,7 +2,12 @@
   const playUrls = {
     fi: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi",
     sv: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=sv",
-    en: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=en"
+    en: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=en",
+    no: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=no",
+    da: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=da",
+    et: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=et",
+    lv: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=lv",
+    lt: "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=lt"
   };
 
   const translations = {
@@ -49,7 +54,7 @@
       privacyPointThree: "Ilmainen versio käyttää Google AdMobia. Mainosvalintoja hallitaan Googlen suostumusnäkymällä.", readPrivacy: "Lue koko tietosuojakäytäntö →",
       safetyTitle: "Turvallisuushuomautus", safetyText: "Salamatutka ei ole virallinen vaaravaroitus- tai turvallisuuspalvelu. Havainnoissa ja päivityksissä voi olla viivettä. Noudata aina viranomaisten sää- ja vaaratiedotteita.",
       contactKicker: "AspByte", contactTitle: "Kysyttävää Salamatutkasta?", contactText: "Palautteet, virheilmoitukset ja yhteistyöehdotukset voi lähettää sähköpostitse.", footerMade: "Tehty Suomessa", footerPlay: "Lataa Google Playsta",
-      policyPageTitle: "Salamatutkan tietosuojakäytäntö – AspByte", policyTitle: "Salamatutkan tietosuojakäytäntö", policyUpdated: "Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 1.8.2026", backHome: "← Takaisin Salamatutkan etusivulle"
+      policyPageTitle: "Salamatutkan tietosuojakäytäntö – AspByte", policyTitle: "Salamatutkan tietosuojakäytäntö", policyUpdated: "Voimassa 13.7.2026 alkaen · Viimeksi päivitetty 15.8.2026", backHome: "← Takaisin Salamatutkan etusivulle"
     },
     sv: {
       pageTitle: "Blixtradar – blixtar på kartan och varningar | AspByte", pageDescription: "Blixtradar visar aktuella blixtobservationer, en täthetskarta och åskområdets uppskattade rörelseriktning samt varnar inom ditt valda område.", policyPageDescription: "Blixtradars integritetspolicy: plats, aviseringar, Google Maps, AdMob och Google Play Billing.",
@@ -90,7 +95,7 @@
       privacyPointThree: "Gratisversionen använder Google AdMob. Annonsval hanteras i Googles samtyckesvy.", readPrivacy: "Läs hela integritetspolicyn →",
       safetyTitle: "Säkerhetsinformation", safetyText: "Blixtradar är inte en officiell varnings- eller säkerhetstjänst. Observationer och uppdateringar kan vara fördröjda. Följ alltid myndigheternas väder- och faromeddelanden.",
       contactKicker: "AspByte", contactTitle: "Frågor om Blixtradar?", contactText: "Feedback, felrapporter och samarbetsförslag kan skickas via e-post.", footerMade: "Skapad i Finland", footerPlay: "Hämta på Google Play",
-      policyPageTitle: "Blixtradars integritetspolicy – AspByte", policyTitle: "Blixtradars integritetspolicy", policyUpdated: "Gäller från 13.7.2026 · Senast uppdaterad 1.8.2026", backHome: "← Tillbaka till Blixtradars startsida"
+      policyPageTitle: "Blixtradars integritetspolicy – AspByte", policyTitle: "Blixtradars integritetspolicy", policyUpdated: "Gäller från 13.7.2026 · Senast uppdaterad 15.8.2026", backHome: "← Tillbaka till Blixtradars startsida"
     },
     en: {
       pageTitle: "Lightning Radar – map and lightning alerts | AspByte", pageDescription: "Lightning Radar shows recent observations, a lightning density heatmap and the storm area's estimated movement direction, with alerts for your selected area.", policyPageDescription: "Lightning Radar privacy policy: location, alerts, Google Maps, AdMob and Google Play Billing.",
@@ -118,7 +123,7 @@
       plansLead: "Both versions include the map, place selection, and Lightning Watch. Pro is ad-free and faster while the app is open.",
       freeName: "Lightning Radar Free", freePrice: "€0", freePricePeriod: " forever", freeBenefitOne: "Lightning map and alert area",
       freeBenefitTwo: "Lightning Watch and Android notifications", freeBenefitThree: "An ad at the bottom of the app", freeBenefitFour: "Active checks about once a minute", freeCta: "Download free",
-      recommended: "Pro", proName: "Lightning Radar Pro", monthlyPrice: "from €1.19", yearlyPrice: "from €11.99", perMonth: " / month", or: "or", perYear: " / year",
+      recommended: "Pro", proName: "Lightning Radar Pro", monthlyPrice: "from €1.19", yearlyPrice: "from €12.99", perMonth: " / month", or: "or", perYear: " / year",
       trial: "1 month free for new annual subscribers", proBenefitOne: "Everything in the Free version", proBenefitTwo: "No ads",
       taxNote: "Prices vary by country. Google Play shows the final local price and taxes before purchase.",
       proBenefitThree: "Near-real-time lightning monitoring while the app is open", proBenefitFour: "Pro home-screen widget", proBenefitFive: "Subscription through Google Play", proCta: "Open in Google Play",
@@ -131,19 +136,22 @@
       privacyPointThree: "The Free version uses Google AdMob. Ad choices are managed through Google's consent interface.", readPrivacy: "Read the full privacy policy →",
       safetyTitle: "Safety notice", safetyText: "Lightning Radar is not an official hazard warning or safety service. Observations and updates may be delayed. Always follow official weather and hazard warnings.",
       contactKicker: "AspByte", contactTitle: "Questions about Lightning Radar?", contactText: "Feedback, bug reports, and partnership enquiries are welcome by email.", footerMade: "Made in Finland", footerPlay: "Get it on Google Play",
-      policyPageTitle: "Lightning Radar Privacy Policy – AspByte", policyTitle: "Lightning Radar Privacy Policy", policyUpdated: "Effective 13 July 2026 · Last updated 1 August 2026", backHome: "← Back to the Lightning Radar home page"
+      policyPageTitle: "Lightning Radar Privacy Policy – AspByte", policyTitle: "Lightning Radar Privacy Policy", policyUpdated: "Effective 13 July 2026 · Last updated 15 August 2026", backHome: "← Back to the Lightning Radar home page"
     }
   };
 
-  const supported = ["fi", "sv", "en"];
+  Object.assign(translations, window.AspByteExtraTranslations || {});
+
+  const supported = ["fi", "sv", "en", "no", "da", "et", "lv", "lt"];
   const getSavedLanguage = () => {
     try {
       const saved = localStorage.getItem("aspbyte-language");
       if (supported.includes(saved)) return saved;
     } catch (_) {}
     const browserLanguage = (navigator.language || "fi").toLowerCase();
-    if (browserLanguage.startsWith("sv")) return "sv";
-    if (browserLanguage.startsWith("en")) return "en";
+    if (browserLanguage.startsWith("nb") || browserLanguage.startsWith("nn")) return "no";
+    const detected = supported.find((language) => browserLanguage.startsWith(language));
+    if (detected) return detected;
     return "fi";
   };
 
@@ -166,6 +174,9 @@
     document.querySelectorAll("[data-lang-button]").forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
     });
+    document.querySelectorAll("[data-language-select]").forEach((select) => {
+      select.value = lang;
+    });
 
     const isPolicy = document.body.dataset.page === "privacy";
     const pageTitle = isPolicy ? dictionary.policyPageTitle : dictionary.pageTitle;
@@ -182,7 +193,7 @@
     if (ogDescription) ogDescription.setAttribute("content", pageDescription);
     if (twitterTitle) twitterTitle.setAttribute("content", pageTitle);
     if (twitterDescription) twitterDescription.setAttribute("content", pageDescription);
-    if (ogLocale) ogLocale.setAttribute("content", { fi: "fi_FI", sv: "sv_SE", en: "en_US" }[lang]);
+    if (ogLocale) ogLocale.setAttribute("content", { fi: "fi_FI", sv: "sv_SE", en: "en_US", no: "nb_NO", da: "da_DK", et: "et_EE", lv: "lv_LV", lt: "lt_LT" }[lang]);
     document.querySelectorAll("[data-play-link]").forEach((link) => {
       link.setAttribute("href", playUrls[lang]);
     });
@@ -191,6 +202,9 @@
 
   document.querySelectorAll("[data-lang-button]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.langButton));
+  });
+  document.querySelectorAll("[data-language-select]").forEach((select) => {
+    select.addEventListener("change", () => setLanguage(select.value));
   });
   setLanguage(getSavedLanguage());
 })();

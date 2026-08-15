@@ -26,6 +26,7 @@
   <link rel="icon" type="image/png" href="icon-512.png">
   <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="site-translations-extra.js"></script>
   <script defer src="site.js"></script>
   <script type="application/ld+json">
   {
@@ -40,7 +41,7 @@
     "downloadUrl": "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi",
     "sameAs": "https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi",
     "image": "https://aspbytedev-dotcom.github.io/og-salamatutka.png",
-    "inLanguage": ["fi", "sv", "en"],
+    "inLanguage": ["fi", "sv", "en", "no", "da", "et", "lv", "lt"],
     "featureList": [
       "Tuoreet salamahavainnot kartalla",
       "Salamatiheyskartta",
@@ -84,10 +85,17 @@
         <a href="https://play.google.com/store/apps/details?id=fi.salamatutka.app&hl=fi" data-play-link data-i18n="navPlay">Google Play</a>
       </nav>
 
-      <div class="language-switcher" aria-label="Kieli" data-i18n-aria="languageLabel">
-        <button type="button" data-lang-button="fi" aria-pressed="true">FI</button>
-        <button type="button" data-lang-button="sv" aria-pressed="false">SV</button>
-        <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
+      <div class="language-switcher">
+        <select data-language-select aria-label="Kieli" data-i18n-aria="languageLabel">
+          <option value="fi">FI · Suomi</option>
+          <option value="sv">SV · Svenska</option>
+          <option value="en">EN · English</option>
+          <option value="no">NO · Norsk</option>
+          <option value="da">DA · Dansk</option>
+          <option value="et">ET · Eesti</option>
+          <option value="lv">LV · Latviešu</option>
+          <option value="lt">LT · Lietuvių</option>
+        </select>
       </div>
     </div>
   </header>
